@@ -1,0 +1,10 @@
+push_swap
+ -generates set of instructions
+ -allowed instructions are on the subject
+ -puts them on stdout
+
+checker
+ -reads instructions from stdout with Get_next_line
+ -instructions end with ctrl+d (?)
+ -says OK or KO depending on result
+ -says Error if there's an error
