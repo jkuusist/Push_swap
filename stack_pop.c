@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   stack_pop.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/08 12:03:00 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/07/08 12:03:00 by jkuusist         ###   ########.fr       */
+/*   Created: 2020/07/08 13:25:00 by jkuusist          #+#    #+#             */
+/*   Updated: 2020/07/08 13:25:00 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "includes/push_swap.h"
 
-typedef struct	s_stack
+int	stack_pop(t_stack *stack)
 {
-	unsigned int	size;
-	int				top;
-	int				*arr;
-}				t_stack;
+	int res;
 
-t_stack			*create_stack(unsigned int new_size);
-void			destroy_stack(t_stack *stack);
-void			stack_push(t_stack *stack, int num);
-int				stack_pop(t_stack *stack);
-
-#endif
+	res = 0;
+	if (stack->top != -1)
+	{
+		res = stack->arr[stack->top];
+		stack->top--;
+	}
+	return (res);
+}
