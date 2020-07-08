@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/06 11:49:00 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/07/06 11:51:00 by jkuusist         ###   ########.fr       */
+/*   Created: 2020/07/08 12:03:00 by jkuusist          #+#    #+#             */
+/*   Updated: 2020/07/08 12:03:00 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include <fcntl.h>
-#include <unistd.h>
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-int		main(int argc, char **argv)
+typedef struct	s_stack
 {
-	char	*s;
-	int 	ret;
+	unsigned int	size;
+	int				top;
+	int				*arr;
+}				t_stack;
 
-	ret = 1;
-	while (ret != 0)
-	{
-		ret = get_next_line(0, &s);
-		if (ret == 1)
-		{
-			//DO STUFF WITH THE READ COMMAND
-			ft_printf("%s\n", s);
-		}
-	}
-	return (0);
-}
+t_stack			*create_stack(unsigned int new_size);
+void			destroy_stack(t_stack *stack);
+
+#endif

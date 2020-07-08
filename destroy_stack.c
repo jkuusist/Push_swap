@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   destroy_stack.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/06 11:49:00 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/07/06 11:51:00 by jkuusist         ###   ########.fr       */
+/*   Created: 2020/07/08 12:16:00 by jkuusist          #+#    #+#             */
+/*   Updated: 2020/07/08 12:16:00 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include <fcntl.h>
-#include <unistd.h>
+#include "includes/push_swap.h"
+#include <stdlib.h>
 
-int		main(int argc, char **argv)
+void	destroy_stack(t_stack *stack)
 {
-	char	*s;
-	int 	ret;
-
-	ret = 1;
-	while (ret != 0)
-	{
-		ret = get_next_line(0, &s);
-		if (ret == 1)
-		{
-			//DO STUFF WITH THE READ COMMAND
-			ft_printf("%s\n", s);
-		}
-	}
-	return (0);
+	free(stack->arr);
+	free(stack);
 }
