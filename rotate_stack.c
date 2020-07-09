@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   rotate_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,21 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "includes/push_swap.h"
 
-typedef struct	s_stack
+void	rotate_stack(t_stack *stack)
 {
-	unsigned int	size;
-	int				top;
-	int				*arr;
-}				t_stack;
+	int top_temp;
+	int i;
 
-t_stack			*create_stack(unsigned int new_size);
-void			destroy_stack(t_stack *stack);
-void			stack_push(t_stack *stack, int num);
-int				stack_pop(t_stack *stack);
-void			swap_elems(t_stack *stack);
-void			rotate_stack(t_stack *stack);
-
-#endif
+	if (stack->top > 0)
+	{
+		top_temp = stack->arr[stack->top];
+		i = stack->top - 1;
+		while (i > -1)
+		{
+			stack->arr[i + 1] = stack->arr[i];
+			i--;
+		}
+		stack->arr[0] = top_temp;
+	}
+}
