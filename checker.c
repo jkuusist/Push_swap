@@ -12,13 +12,15 @@
 
 #include "libft/libft.h"
 #include <fcntl.h>
-#include <unistd.h>
 
-int		main(int argc, char **argv)
+int		main(/*int argc, char **argv*/)
 {
 	char	*s;
 	int 	ret;
 
+	//REPLACE WITH SOMETHING BETTER LATER
+//	if ((argc > 2) || (argv[0][0] != '\0'))
+//		return (-1);
 	ret = 1;
 	while (ret != 0)
 	{
