@@ -26,5 +26,6 @@ void			stack_push(t_stack *stack, int num);
 int				stack_pop(t_stack *stack);
 void			swap_elems(t_stack *stack);
 void			rotate_stack(t_stack *stack);
+void			reverse_rotate_stack(t_stack *stack);
 
 #endif
