@@ -16,7 +16,7 @@ HEDR = includes/push_swap.h
 
 LIBFT = ./libft
 
-CHECKER_SRCS = checker.c create_stack.c destroy_stack.c reverse_rotate_stack.c rotate_stack.c stack_pop.c stack_push.c swap_elems.c
+CHECKER_SRCS = checker.c create_stack.c destroy_stack.c is_sorted.c reverse_rotate_stack.c rotate_stack.c stack_pop.c stack_push.c swap_elems.c
 
 CHECKER_OBJS = $(CHECKER_SRCS:.c=.o)
  
