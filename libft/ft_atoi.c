@@ -20,7 +20,7 @@ static int	is_whitespace(char c)
 		return (0);
 }
 
-int			ft_atoi(const char *str)
+long long	ft_atoi(const char *str)
 {
 	int					i;
 	unsigned long long	res;
