@@ -37,6 +37,13 @@ int	main(int argc, char **argv)
 			}
 			i++;
 		}
+		if (has_duplicate(stack_a))
+		{
+			ft_printf("Error\n");
+			destroy_stack(stack_a);
+			destroy_stack(stack_b);
+			return (-1);
+		}
 
 	//REMOVE LATER
 	for (int i = stack_a->top; i >= 0; i--)
