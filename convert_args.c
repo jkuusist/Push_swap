@@ -1,41 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   convert_args.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/06 11:49:00 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/07/06 11:51:00 by jkuusist         ###   ########.fr       */
+/*   Created: 2020/07/14 12:07:00 by jkuusist          #+#    #+#             */
+/*   Updated: 2020/07/15 11:34:00 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 #include "libft/libft.h"
 
-int		main(int argc, char **argv)
+int	convert_args(t_stack *stack_a, t_stack *stack_b, char **argv, int argc)
 {
-	char	*s;
-	int 	ret;
-	t_stack *stack_a;
-	t_stack *stack_b;
+	int i;
 
-	if (argc > 1)
+	i = 1;
+	while (i < argc)
 	{
-		stack_a = create_stack(argc - 1);	
-		stack_b = create_stack(argc - 1);
-		if (!(convert_args(stack_a, stack_b, argv, argc)))
-			return (-1);
-		ret = 1;
-		while (ret != 0)
+		if (check_arg(argv[i])) 
+			stack_push(stack_a, ft_atoi(argv[i]));
+		else
 		{
-			ret = get_next_line(0, &s);
-			if (ret == 1)
-			{
-				//DO STUFF WITH THE READ COMMAND
-				ft_printf("%s\n", s);
-			}
+			ft_printf("Error\n");
+			destroy_stack(stack_a);
+			destroy_stack(stack_b);
+			return (0);
 		}
+		i++;
 	}
-	return (0);
+	if (has_duplicate(stack_a))
+	{
+		ft_printf("Error\n");
+		destroy_stack(stack_a);
+		destroy_stack(stack_b);
+		return (0);
+	}
+	return (1);
 }

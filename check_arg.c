@@ -18,9 +18,8 @@ int	check_arg(char *arg)
 	int			i;
 	long long	temp;
 
-	ft_printf("arg is: %s\n", arg);
-
-	i = 0;
+	(arg[0] == '-') ? (i = 1) : (i = 0);
+	
 	while (arg[i])
 	{
 		if (!(ft_isdigit(arg[i])))
@@ -28,10 +27,6 @@ int	check_arg(char *arg)
 		i++;
 	}
 	temp = ft_atoi(arg);
-
-	ft_printf("temp is %lld\n", temp);
-//	ft_printf("INT_MAX IS %ld\nINT_MIN IS %ld\n", INT_MAX, INT_MIN);
-
 	if ((temp > INT_MAX) || (temp < INT_MIN))
 		return (0);
 	return (1);
