@@ -46,8 +46,8 @@ int	main(int argc, char **argv)
 		}
 
 	//REMOVE LATER
-	for (int i = stack_a->top; i >= 0; i--)
-		ft_printf("%d\n", stack_a->arr[i]);
+		for (int i = stack_a->top; i >= 0; i--)
+			ft_printf("%d\n", stack_a->arr[i]);
 
 		if (stack_a->arr[stack_a->top] > stack_a->arr[stack_a->top -1])
 		{
@@ -56,8 +56,8 @@ int	main(int argc, char **argv)
 		}	
 	
 	//REMOVE LATER
-	for (int i = stack_a->top; i >= 0; i--)
-		ft_printf("%d\n", stack_a->arr[i]);
+		for (int i = stack_a->top; i >= 0; i--)
+			ft_printf("%d\n", stack_a->arr[i]);
 	
 		destroy_stack(stack_a);
 		destroy_stack(stack_b);
