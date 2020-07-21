@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/14 12:07:00 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/07/15 11:34:00 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/07/20 12:13:00 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,49 +17,33 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
+	int		temp;
 	
 	if (argc > 1)
 	{
-/*
-		i = 1;
-		while (i < argc)
-		{
-			if (check_arg(argv[i])) 
-				stack_push(stack_a, ft_atoi(argv[i]));
-			else
-			{
-				ft_printf("Error\n");
-				destroy_stack(stack_a);
-				destroy_stack(stack_b);
-				return (-1);
-			}
-			i++;
-		}
-		if (has_duplicate(stack_a))
-		{
-			ft_printf("Error\n");
-			destroy_stack(stack_a);
-			destroy_stack(stack_b);
-			return (-1);
-		}
-*/
 		stack_a = create_stack(argc - 1);
 		stack_b = create_stack(argc - 1);
 		convert_args(stack_a, stack_b, argv, argc);
 
-	//REMOVE LATER
-//		for (int i = stack_a->top; i >= 0; i--)
-//			ft_printf("%d\n", stack_a->arr[i]);
-
-		if (stack_a->arr[stack_a->top] > stack_a->arr[stack_a->top -1])
+		while (stack_a->top != -1)
 		{
-			swap_elems(stack_a);
-			ft_printf("sa\n");
-		}	
-	
-	//REMOVE LATER
-//		for (int i = stack_a->top; i >= 0; i--)
-//			ft_printf("%d\n", stack_a->arr[i]);
+			temp = stack_pop(stack_a);
+			while ((stack_b->top != -1) && (stack_b->arr[stack_b->top] > temp))
+			{
+				stack_push(stack_a, stack_pop(stack_b));
+				ft_printf("pa1\n");
+			}	
+			stack_push(stack_b, temp);
+			ft_printf("pb\n");
+		}
+		while (stack_b->top != -1)
+		{
+			stack_push(stack_a, stack_pop(stack_b));
+			ft_printf("pa2\n");
+		}
+
+		for (int i = stack_a->top; i >= 0; i--)
+			ft_printf("%d\n", stack_a->arr[i]);
 	
 		destroy_stack(stack_a);
 		destroy_stack(stack_b);
