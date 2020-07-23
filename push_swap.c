@@ -17,14 +17,14 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	int		temp;
+//	int		temp;
 	
 	if (argc > 1)
 	{
 		stack_a = create_stack(argc - 1);
 		stack_b = create_stack(argc - 1);
 		convert_args(stack_a, stack_b, argv, argc);
-
+/*
 		while (stack_a->top != -1)
 		{
 			temp = stack_pop(stack_a);
@@ -41,6 +41,8 @@ int	main(int argc, char **argv)
 			stack_push(stack_a, stack_pop(stack_b));
 			ft_printf("pa2\n");
 		}
+*/
+		sort_stack(stack_a);
 
 		for (int i = stack_a->top; i >= 0; i--)
 			ft_printf("%d\n", stack_a->arr[i]);

@@ -32,4 +32,6 @@ int				has_duplicate(t_stack *stack);
 int				check_arg(char *arg);
 int				convert_args(t_stack *stack_a, t_stack *stack_b, char **argv, int argc);
 int				stack_peek(t_stack *stack);
+void			sort_stack(t_stack *stack);
+
 #endif
