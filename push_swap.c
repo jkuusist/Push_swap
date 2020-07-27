@@ -23,25 +23,8 @@ int	main(int argc, char **argv)
 	{
 		stack_a = create_stack(argc - 1);
 		stack_b = create_stack(argc - 1);
-		convert_args(stack_a, stack_b, argv, argc);
-/*
-		while (stack_a->top != -1)
-		{
-			temp = stack_pop(stack_a);
-			while ((stack_b->top != -1) && (stack_b->arr[stack_b->top] > temp))
-			{
-				stack_push(stack_a, stack_pop(stack_b));
-				ft_printf("pa1\n");
-			}	
-			stack_push(stack_b, temp);
-			ft_printf("pb\n");
-		}
-		while (stack_b->top != -1)
-		{
-			stack_push(stack_a, stack_pop(stack_b));
-			ft_printf("pa2\n");
-		}
-*/
+		if (!convert_args(stack_a, stack_b, argv, argc))
+			return (-1);
 		sort_stack(stack_a);
 
 		for (int i = stack_a->top; i >= 0; i--)
