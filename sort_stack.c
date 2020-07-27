@@ -13,6 +13,7 @@
 #include "includes/push_swap.h"
 #include "libft/libft.h"
 
+/*
 static void	insert_element(t_stack *stack, int element)
 {
 	int temp;
@@ -30,9 +31,11 @@ static void	insert_element(t_stack *stack, int element)
 		ft_printf("push\n");
 	}
 }
+*/
 
 void	sort_stack(t_stack *stack)
 {
+/*
 	int temp;
 
 	if (stack->top != -1)
@@ -41,4 +44,6 @@ void	sort_stack(t_stack *stack)
 		sort_stack(stack);
 		insert_element(stack, temp);
 	}
+*/
+	
 }
