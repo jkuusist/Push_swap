@@ -23,12 +23,13 @@ int	get_median(t_stack *stack)
 	if (!(arr = (int*)malloc(sizeof(int) * stack->size)))
 		return (INT_MIN);
 	i = 0;
-	while (i < stack->size)
+	while (i < (int)stack->size)
 	{
 		arr[i] = stack->arr[i];
 		i++;
 	}
 	quicksort(arr, 0, stack->size);
 	median = arr[stack->size / 2];
+	(stack->size % 2) ? (median += 1) : (median -= 1);
 	return (median);
 }
