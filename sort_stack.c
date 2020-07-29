@@ -13,37 +13,38 @@
 #include "includes/push_swap.h"
 #include "libft/libft.h"
 
-/*
-static void	insert_element(t_stack *stack, int element)
+void	sort_stack(t_stack *a, t_stack *b)
 {
-	int temp;
+	int i;
+	int median;
 
-	if ((stack->top == -1) || (element < stack->arr[stack->top]))
-	{	
-		stack_push(stack, element);
-		ft_printf("push\n");
-	}
-	else
-	{
-		temp = stack_pop(stack);
-		insert_element(stack, element);
-		stack_push(stack, temp);
-		ft_printf("push\n");
-	}
-}
-*/
+	i = 0;
+	median = get_median(a);
 
-void	sort_stack(t_stack *stack)
-{
-/*
-	int temp;
-
-	if (stack->top != -1)
-	{
-		temp = stack_pop(stack);
-		sort_stack(stack);
-		insert_element(stack, temp);
-	}
-*/
+	ft_printf("median is %d\n", median);
 	
+	ft_printf("STACK A:\n");
+	for (int i = a->top; i >= 0; i--)
+			ft_printf("%d\n", a->arr[i]);
+
+	ft_printf("STACK b:\n");
+	for (int i = b->top; i >= 0; i--)
+			ft_printf("%d\n", b->arr[i]);
+	
+	while (i < (int)a->size)
+	{
+		if (stack_peek(a) < median)
+			stack_push(b, stack_pop(a));
+		else
+			rotate_stack(a);
+		i++;
+	}
+
+	ft_printf("\nSTACK A:\n");
+	for (int i = a->top; i >= 0; i--)
+			ft_printf("%d\n", a->arr[i]);
+
+	ft_printf("STACK b:\n");
+	for (int i = b->top; i >= 0; i--)
+			ft_printf("%d\n", b->arr[i]);
 }

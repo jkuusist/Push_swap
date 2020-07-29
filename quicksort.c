@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	swap(int *a, int *b)
+static void	swap(int *a, int *b)
 {
 	int temp;
 
@@ -19,7 +19,7 @@ void	swap(int *a, int *b)
 	*b = temp;
 }
 
-int		partition(int *arr, int start, int end)
+static int	partition(int *arr, int start, int end)
 {
 	int pivot;
 	int i;
@@ -41,7 +41,7 @@ int		partition(int *arr, int start, int end)
 	return (i + 1);
 }
 
-void	quicksort(int *arr, int start, int end)
+void		quicksort(int *arr, int start, int end)
 {
 	int pivot;
 

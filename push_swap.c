@@ -25,10 +25,10 @@ int	main(int argc, char **argv)
 		stack_b = create_stack(argc - 1);
 		if (!convert_args(stack_a, stack_b, argv, argc))
 			return (-1);
-		sort_stack(stack_a);
+		sort_stack(stack_a, stack_b);
 
-		for (int i = stack_a->top; i >= 0; i--)
-			ft_printf("%d\n", stack_a->arr[i]);
+//		for (int i = stack_a->top; i >= 0; i--)
+//			ft_printf("%d\n", stack_a->arr[i]);
 	
 		destroy_stack(stack_a);
 		destroy_stack(stack_b);
