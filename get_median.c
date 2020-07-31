@@ -30,6 +30,7 @@ int	get_median(t_stack *stack)
 	}
 	quicksort(arr, 0, stack->size);
 	median = arr[stack->size / 2];
-	(stack->size % 2) ? (median += 1) : (median -= 1);
+	if (stack->size % 2)
+		 median += 1;
 	return (median);
 }

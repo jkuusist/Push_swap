@@ -17,8 +17,10 @@ int	convert_args(t_stack *stack_a, t_stack *stack_b, char **argv, int argc)
 {
 	int i;
 
-	i = 1;
-	while (i < argc)
+//	i = 1;
+	i = argc - 1;
+//	while (i < argc)
+	while (i > 0)
 	{
 		if (check_arg(argv[i])) 
 			stack_push(stack_a, ft_atoi(argv[i]));
@@ -29,7 +31,8 @@ int	convert_args(t_stack *stack_a, t_stack *stack_b, char **argv, int argc)
 			destroy_stack(stack_b);
 			return (0);
 		}
-		i++;
+//		i++;
+		i--;
 	}
 	if (has_duplicate(stack_a))
 	{
