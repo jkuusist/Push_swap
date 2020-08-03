@@ -35,5 +35,8 @@ int				stack_peek(t_stack *stack);
 void			sort_stack(t_stack *a, t_stack *b);
 int				get_median(t_stack *stack);
 void			quicksort(int *arr, int start, int end);
+int				get_smallest(t_stack *stack);
+int				get_largest(t_stack *stack);
+void			do_least_moves(t_stack *a, t_stack *b, int is_largest);
 
 #endif

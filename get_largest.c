@@ -21,7 +21,7 @@ int	get_largest(t_stack *stack)
 	{
 		i = 1;
 		res = 0;
-		while (i < (int)stack->size)
+		while (i < (int)stack->top)
 		{
 			if (stack->arr[i] > stack->arr[res])
 				res = i;

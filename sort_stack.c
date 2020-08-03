@@ -40,6 +40,28 @@ void	sort_stack(t_stack *a, t_stack *b)
 		i++;
 	}
 
+	//FIND LARGEST IN STACK_B AND ROTATE IT TO TOP
+	//PUSH IT TO STACK_A
+	//ROTATE IT TO BOTTOM OF STACK_A
+	while (b->top != -1)
+		do_least_moves(a, b, 1);
+
+	i = 0;
+	while (i < (int)a->size)
+	{
+		if (stack_peek(a) > median)
+			stack_push(b, stack_pop(a));
+		else
+			rotate_stack(a);
+		i++;
+	}
+
+	//FIND SMALLEST IN STACK_B AND ROTATE IT TO TOP
+	//PUSH IT TO STACK_A
+	//REPEAT UNTIL STACK_B IS EMPTY
+	while (b->top != -1)
+		do_least_moves(a, b, 0);
+/*
 	ft_printf("\nSTACK A:\n");
 	for (int i = a->top; i >= 0; i--)
 			ft_printf("%d\n", a->arr[i]);
@@ -47,4 +69,5 @@ void	sort_stack(t_stack *a, t_stack *b)
 	ft_printf("STACK b:\n");
 	for (int i = b->top; i >= 0; i--)
 			ft_printf("%d\n", b->arr[i]);
+*/
 }

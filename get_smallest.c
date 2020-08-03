@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
+#include "libft/libft.h"
 
 int	get_smallest(t_stack *stack)
 {
@@ -21,8 +22,10 @@ int	get_smallest(t_stack *stack)
 	{
 		i = 1;
 		res = 0;
-		while (i < (int)stack->size)
+		while (i < (int)stack->top)
 		{
+			ft_printf("arr[i] is %d\narr[res] is %d\nres is %d\n", stack->arr[i], stack->arr[res], res);
+
 			if (stack->arr[i] < stack->arr[res])
 				res = i;
 			i++;
