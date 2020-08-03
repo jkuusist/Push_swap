@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "includes/push_swap.h"
+
 int	get_smallest(t_stack *stack)
 {
 	int i;
@@ -19,7 +21,7 @@ int	get_smallest(t_stack *stack)
 	{
 		i = 1;
 		res = 0;
-		while (i < stack->size)
+		while (i < (int)stack->size)
 		{
 			if (stack->arr[i] < stack->arr[res])
 				res = i;
@@ -27,4 +29,5 @@ int	get_smallest(t_stack *stack)
 		}
 		return (res);
 	}
+	return (-1);
 }
