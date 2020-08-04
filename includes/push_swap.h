@@ -18,6 +18,8 @@ typedef struct	s_stack
 	unsigned int	size;
 	int				top;
 	int				*arr;
+	int				smallest;
+	int				largest;
 }				t_stack;
 
 t_stack			*create_stack(unsigned int new_size);

@@ -11,9 +11,12 @@
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
+#include "libft/libft.h"
 
 int	get_largest(t_stack *stack)
 {
+//	ft_printf("top of get_largest\n");
+
 	int i;
 	int res;
 
@@ -21,6 +24,9 @@ int	get_largest(t_stack *stack)
 	{
 		i = 1;
 		res = 0;
+		
+//		ft_printf("stack->top is %u\n", stack->top);
+
 		while (i < (int)stack->top)
 		{
 			if (stack->arr[i] > stack->arr[res])

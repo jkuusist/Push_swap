@@ -15,6 +15,8 @@
 
 int	get_smallest(t_stack *stack)
 {
+//	ft_printf("top of get_smallest\n");
+
 	int i;
 	int res;
 
