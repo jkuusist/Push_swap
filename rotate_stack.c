@@ -20,7 +20,7 @@ void	rotate_stack(t_stack *stack)
 	int top_temp;
 	int i;
 
-	ft_printf("stack's top is %d\n", stack->arr[stack->top]);
+//	ft_printf("stack's top is %d\n", stack->arr[stack->top]);
 
 	if (stack->top > 0)
 	{

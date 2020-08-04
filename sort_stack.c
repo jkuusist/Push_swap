@@ -26,11 +26,11 @@ void	sort_stack(t_stack *a, t_stack *b)
 	ft_printf("STACK A:\n");
 	for (int i = a->top; i >= 0; i--)
 			ft_printf("%d\n", a->arr[i]);
-/*
+
 	ft_printf("STACK b:\n");
 	for (int i = b->top; i >= 0; i--)
 			ft_printf("%d\n", b->arr[i]);
-*/	
+	
 	while (i < (int)a->size)
 	{
 		if (stack_peek(a) < median)
@@ -75,7 +75,7 @@ void	sort_stack(t_stack *a, t_stack *b)
 	}
 
 	stack_push(a, stack_pop(b));
-/*
+
 	ft_printf("\nSTACK A:\n");
 	for (int i = a->top; i >= 0; i--)
 			ft_printf("%d\n", a->arr[i]);
@@ -83,5 +83,5 @@ void	sort_stack(t_stack *a, t_stack *b)
 	ft_printf("STACK b:\n");
 	for (int i = b->top; i >= 0; i--)
 			ft_printf("%d\n", b->arr[i]);
-*/
+
 }

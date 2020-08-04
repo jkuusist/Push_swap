@@ -59,6 +59,7 @@ void		do_least_moves(t_stack *a, t_stack *b, int is_largest)
 	smallest_i = get_smallest(b);
 	largest_i = get_largest(b);
 
+
 //	ft_printf("b->top is %d\n", b->top);
 //	ft_printf("smallest index is %d\nlargest index is %d\n", smallest, largest);
 //	ft_printf("smallest elem is %d\nlargest elem is %d\n", b->arr[smallest], b->arr[largest]);
@@ -69,7 +70,6 @@ void		do_least_moves(t_stack *a, t_stack *b, int is_largest)
 		{
 			while (b->arr[b->top] != b->largest)
 			{
-			//	ft_printf("1\n");
 			//	ft_printf("b's top is %d. b->largest is %d\n", b->arr[b->top], b->largest);
 				rotate_stack(b);
 			}
@@ -78,19 +78,18 @@ void		do_least_moves(t_stack *a, t_stack *b, int is_largest)
 		{
 			while (b->arr[b->top] != b->largest)
 			{
-				ft_printf("2\n");
 //				ft_printf("b's top is %d. largest elem is %d\n", b->arr[b->top], b->arr[largest]);
 				reverse_rotate_stack(b);
 			}
 		}
 	}
+
 	else
 	{
-		if (rot_moves(b, smallest_i) < rev_rot_moves(/*b, */smallest_i))
+		if (rot_moves(b, smallest_i) < rev_rot_moves(smallest_i))
 		{
 			while (b->arr[b->top] != b->smallest)
 			{
-				ft_printf("3\n");
 				rotate_stack(b);
 			}
 		}
@@ -98,11 +97,11 @@ void		do_least_moves(t_stack *a, t_stack *b, int is_largest)
 		{
 			while (b->arr[b->top] != b->smallest)
 			{
-				ft_printf("b's top is %d. b->smallest is %d\n", b->arr[b->top], b->smallest);
-//				ft_printf("4\n");
+//				ft_printf("b's top is %d. b->smallest is %d\n", b->arr[b->top], b->smallest);
 				reverse_rotate_stack(b);
 			}
 		}
 	}
+
 	stack_push(a, stack_pop(b));
 }
