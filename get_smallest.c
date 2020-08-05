@@ -24,9 +24,9 @@ int	get_smallest(t_stack *stack)
 	{
 		i = 1;
 		res = 0;
-		while (i < (int)stack->top)
+		while (i <= (int)stack->top)
 		{
-//			ft_printf("arr[i] is %d\narr[res] is %d\nres is %d\n", stack->arr[i], stack->arr[res], res);
+//			ft_printf("arr[%d] is %d\narr[res] is %d\nres is %d\n", i, stack->arr[i], stack->arr[res], res);
 
 			if (stack->arr[i] < stack->arr[res])
 				res = i;

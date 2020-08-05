@@ -33,6 +33,6 @@ void	rotate_stack(t_stack *stack)
 		}
 		stack->arr[0] = top_temp;
 
-		ft_printf("stack's top is %d\n", stack->arr[stack->top]);
+//		ft_printf("stack's top is %d\n", stack->arr[stack->top]);
 	}
 }
