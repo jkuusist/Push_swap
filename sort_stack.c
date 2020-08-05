@@ -24,13 +24,9 @@ void	sort_stack(t_stack *a, t_stack *b)
 	ft_printf("median is %d\n", median);
 	
 	ft_printf("STACK A:\n");
-//	for (int i = a->top; i >= 0; i--)
-//			ft_printf("%d\n", a->arr[i]);
 	print_stack(a);
 
 	ft_printf("STACK B:\n");
-//	for (int i = b->top; i >= 0; i--)
-//			ft_printf("%d\n", b->arr[i]);
 	print_stack(b);
 	ft_printf("\n");
 	
@@ -44,13 +40,9 @@ void	sort_stack(t_stack *a, t_stack *b)
 	}
 	
 	ft_printf("STACK A:\n");
-//	for (int i = a->top; i >= 0; i--)
-//			ft_printf("%d\n", a->arr[i]);
 	print_stack(a);
 
 	ft_printf("STACK B:\n");
-//	for (int i = b->top; i >= 0; i--)
-//			ft_printf("%d\n", b->arr[i]);
 	print_stack(b);
 	ft_printf("\n");
 	
@@ -65,7 +57,7 @@ void	sort_stack(t_stack *a, t_stack *b)
 
 	while (b->top > 0) //!= -1)
 	{
-		do_least_moves(a, b, 1);
+		do_least_moves(a, b, 0);
 	}
 
 	stack_push(a, stack_pop(b));
@@ -95,13 +87,9 @@ void	sort_stack(t_stack *a, t_stack *b)
 	stack_push(a, stack_pop(b));
 
 	ft_printf("\nSTACK A:\n");
-//	for (int i = a->top; i >= 0; i--)
-//			ft_printf("%d\n", a->arr[i]);
 	print_stack(a);
 
 	ft_printf("STACK B:\n");
-//	for (int i = b->top; i >= 0; i--)
-//			ft_printf("%d\n", b->arr[i]);
 	print_stack(b);
 	ft_printf("\n");
 }

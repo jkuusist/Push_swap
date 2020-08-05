@@ -18,7 +18,7 @@ static int	rot_moves(t_stack *stack, int elem_index)
 	return (stack->top - elem_index);
 }
 
-static int	rev_rot_moves(/*t_stack *stack, */int elem_index)
+static int	rev_rot_moves(int elem_index)
 {
 	return (elem_index + 1);
 }
