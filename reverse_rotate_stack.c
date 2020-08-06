@@ -31,6 +31,6 @@ void	reverse_rotate_stack(t_stack *stack)
 			i++;
 		}
 		stack->arr[stack->top] = btm_temp;
-		ft_printf("rev_rotate_PLACEHOLDER\n");
+//		ft_printf("rev_rotate_PLACEHOLDER\n");
 	}
 }

@@ -42,5 +42,6 @@ int				get_largest(t_stack *stack);
 void			do_least_moves(t_stack *a, t_stack *b, int is_largest);
 void			print_stack(t_stack *stack);
 void			push_ab(t_stack *a, t_stack *b, char id);
+void			sort_small(t_stack *a, t_stack *b);
 
 #endif

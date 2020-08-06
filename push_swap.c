@@ -34,7 +34,10 @@ int	main(int argc, char **argv)
 			destroy_stack(stack_b);
 			return (0);
 		}
-		sort_stack(stack_a, stack_b);
+		if (argc <= 6)
+			sort_small(stack_a, stack_b);
+		else
+			sort_stack(stack_a, stack_b);
 		destroy_stack(stack_a);
 		destroy_stack(stack_b);
 	}
