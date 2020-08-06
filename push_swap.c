@@ -17,19 +17,24 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-//	int		temp;
 	
 	if (argc > 1)
 	{
 		stack_a = create_stack(argc - 1);
 		stack_b = create_stack(argc - 1);
 		if (!convert_args(stack_a, stack_b, argv, argc))
+		{
+			destroy_stack(stack_a);
+			destroy_stack(stack_b);
 			return (-1);
+		}
+		if (is_sorted(stack_a))
+		{
+			destroy_stack(stack_a);
+			destroy_stack(stack_b);
+			return (0);
+		}
 		sort_stack(stack_a, stack_b);
-
-//		for (int i = stack_a->top; i >= 0; i--)
-//			ft_printf("%d\n", stack_a->arr[i]);
-	
 		destroy_stack(stack_a);
 		destroy_stack(stack_b);
 	}

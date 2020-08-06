@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
+#include "libft/libft.h"
 
 void	stack_push(t_stack *stack, int num)
 {
@@ -18,5 +19,6 @@ void	stack_push(t_stack *stack, int num)
 	{
 		stack->top++;
 		stack->arr[stack->top] = num;
+//		ft_printf("push_PLACEHOLDER\n");
 	}
 }

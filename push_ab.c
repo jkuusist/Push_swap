@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_sorted.c                                        :+:      :+:    :+:   */
+/*   push_ab.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/13 09:22:00 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/07/13 09:22:00 by jkuusist         ###   ########.fr       */
+/*   Created: 2020/08/06 12:36:00 by jkuusist          #+#    #+#             */
+/*   Updated: 2020/08/06 12:36:00 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
+#include "libft/libft.h"
 
-int	is_sorted(t_stack *stack)
+void	push_ab(t_stack *a, t_stack *b, char id)
 {
-	int i;
-
-	i = stack->top - 1;
-	while (i >= 0)
+	if (id == 'a')
 	{
-		if (stack->arr[i] > stack->arr[i + 1])
-			return (0);
-		i--;
+		stack_push(a, stack_pop(b));
+		ft_printf("pa\n");
 	}
-	return (1);
+	else if (id == 'b')
+	{
+		stack_push(b, stack_pop(a));
+		ft_printf("pb\n");
+	}
 }

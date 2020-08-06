@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
+#include "libft/libft.h"
 
 void	swap_elems(t_stack *stack)
 {
@@ -21,5 +22,6 @@ void	swap_elems(t_stack *stack)
 		temp = stack->arr[stack->top];
 		stack->arr[stack->top] = stack->arr[stack->top - 1];
 		stack->arr[stack->top - 1] = temp;
+		ft_printf("swap_PLACEHOLDER\n");
 	}
 }

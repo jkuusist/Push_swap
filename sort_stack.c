@@ -20,7 +20,7 @@ void	sort_stack(t_stack *a, t_stack *b)
 
 	i = 0;
 	median = get_median(a);
-
+/*
 	ft_printf("median is %d\n", median);
 	
 	ft_printf("STACK A:\n");
@@ -29,23 +29,24 @@ void	sort_stack(t_stack *a, t_stack *b)
 	ft_printf("STACK B:\n");
 	print_stack(b);
 	ft_printf("\n");
-	
+*/	
 	while (i < (int)a->size)
 	{
 		if (stack_peek(a) <= median)
-			stack_push(b, stack_pop(a));
+			push_ab(a, b, 'b');
+			//stack_push(b, stack_pop(a));
 		else
 			rotate_stack(a);
 		i++;
 	}
-	
+/*	
 	ft_printf("STACK A:\n");
 	print_stack(a);
 
 	ft_printf("STACK B:\n");
 	print_stack(b);
 	ft_printf("\n");
-	
+*/	
 	b->smallest = b->arr[get_smallest(b)];
 	b->largest = b->arr[get_largest(b)];
 
@@ -55,18 +56,20 @@ void	sort_stack(t_stack *a, t_stack *b)
 	//PUSH IT TO STACK_A
 	//ROTATE IT TO BOTTOM OF STACK_A
 
-	while (b->top > 0) //!= -1)
+	while (b->top > 0)
 	{
 		do_least_moves(a, b, 0);
 	}
 
-	stack_push(a, stack_pop(b));
+	push_ab(a, b, 'a');
+	//stack_push(a, stack_pop(b));
 
 	i = 0;
 	while (i < (int)a->size)
 	{
 		if (stack_peek(a) > median)
-			stack_push(b, stack_pop(a));
+			push_ab(a, b, 'b');
+			//stack_push(b, stack_pop(a));
 		else
 			rotate_stack(a);
 		i++;
@@ -79,17 +82,20 @@ void	sort_stack(t_stack *a, t_stack *b)
 	//PUSH IT TO STACK_A
 	//REPEAT UNTIL STACK_B IS EMPTY
 
-	while (b->top > 0) //!= -1)
+	while (b->top > 0)
 	{
 		do_least_moves(a, b, 0);
 	}
 
-	stack_push(a, stack_pop(b));
-
+	
+	push_ab(a, b, 'a');
+	//stack_push(a, stack_pop(b));
+/*
 	ft_printf("\nSTACK A:\n");
 	print_stack(a);
 
 	ft_printf("STACK B:\n");
 	print_stack(b);
 	ft_printf("\n");
+*/
 }
