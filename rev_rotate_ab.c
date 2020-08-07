@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_arg.c                                        :+:      :+:    :+:   */
+/*   rev_rotate_ab.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/14 12:47:00 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/07/14 12:47:00 by jkuusist         ###   ########.fr       */
+/*   Created: 2020/08/07 12:02:00 by jkuusist          #+#    #+#             */
+/*   Updated: 2020/08/07 12:29:00 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "includes/push_swap.h"
 #include "libft/libft.h"
-#include <limits.h>
 
-int	check_arg(char *arg)
+void	rev_rotate_ab(t_stack *stack, char id)
 {
-	int			i;
-	long long	temp;
-
-	(arg[0] == '-') ? (i = 1) : (i = 0);
-	while (arg[i])
+	if (id == 'a')
 	{
-		if (!(ft_isdigit(arg[i])))
-			return (0);
-		i++;
+		reverse_rotate_stack(stack);
+		ft_printf("rra\n");
 	}
-	temp = ft_atoi(arg);
-	if ((temp > INT_MAX) || (temp < INT_MIN))
-		return (0);
-	return (1);
+	else if (id == 'b')
+	{
+		reverse_rotate_stack(stack);
+		ft_printf("rrb\n");
+	}
 }
+

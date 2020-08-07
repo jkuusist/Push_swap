@@ -36,7 +36,8 @@ void	sort_stack(t_stack *a, t_stack *b)
 			push_ab(a, b, 'b');
 			//stack_push(b, stack_pop(a));
 		else
-			rotate_stack(a);
+			rotate_ab(a, 'a');
+			//rotate_stack(a);
 		i++;
 	}
 /*	
@@ -71,7 +72,8 @@ void	sort_stack(t_stack *a, t_stack *b)
 			push_ab(a, b, 'b');
 			//stack_push(b, stack_pop(a));
 		else
-			rotate_stack(a);
+			rotate_ab(a, 'a');
+			//rotate_stack(a);
 		i++;
 	}
 

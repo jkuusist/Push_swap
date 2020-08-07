@@ -18,7 +18,7 @@ LIBFT = ./libft
 
 CHECKER_SRCS = checker.c check_arg.c convert_args.c create_stack.c destroy_stack.c has_duplicate.c is_sorted.c reverse_rotate_stack.c rotate_stack.c stack_pop.c stack_push.c swap_elems.c
 
-PUSH_SWAP_SRCS = push_swap.c check_arg.c convert_args.c create_stack.c destroy_stack.c do_least_moves.c get_largest.c get_median.c get_smallest.c has_duplicate.c is_sorted.c print_stack.c push_ab.c quicksort.c reverse_rotate_stack.c rotate_stack.c sort_small.c sort_stack.c stack_peek.c stack_pop.c stack_push.c swap_elems.c
+PUSH_SWAP_SRCS = push_swap.c check_arg.c convert_args.c create_stack.c destroy_stack.c do_least_moves.c get_largest.c get_median.c get_smallest.c has_duplicate.c is_sorted.c print_stack.c push_ab.c quicksort.c reverse_rotate_stack.c rev_rotate_ab.c rotate_ab.c rotate_stack.c sort_small.c sort_stack.c stack_peek.c stack_pop.c stack_push.c swap_ab.c swap_elems.c
 
 CHECKER_OBJS = $(CHECKER_SRCS:.c=.o)
 
