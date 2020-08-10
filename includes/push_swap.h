@@ -50,5 +50,7 @@ void			sort_small(t_stack *a, t_stack *b);
 void			rotate_ab(t_stack *stack, char id);
 void			rev_rotate_ab(t_stack *stack, char id);
 void			swap_ab(t_stack *stack, char id);
+void			sort_large(t_stack *a, t_stack *b);
+void			get_quarts(t_stack *stack);
 
 #endif

@@ -34,7 +34,9 @@ int	main(int argc, char **argv)
 			destroy_stack(stack_b);
 			return (0);
 		}
-		if (argc <= 6)
+		if (argc >= 500)
+			sort_large(stack_a, stack_b);
+		else if (argc <= 6)
 			sort_small(stack_a, stack_b);
 		else
 			sort_stack(stack_a, stack_b);

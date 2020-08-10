@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   quicksort.c                                        :+:      :+:    :+:   */
+/*   get_quarts.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/27 11:26:00 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/07/27 11:34:00 by jkuusist         ###   ########.fr       */
+/*   Created: 2020/08/10 11:59:00 by jkuusist          #+#    #+#             */
+/*   Updated: 2020/08/10 11:59:00 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 #include <stdlib.h>
-#include <limits.h>
 
-int	get_median(t_stack *stack)
+void	get_quarts(t_stack *stack)
 {
 	int *arr;
 	int i;
-	int median;
 
 	if (!(arr = (int*)malloc(sizeof(int) * stack->size)))
-		return (INT_MIN);
+		return ;
 	i = 0;
 	while (i < (int)stack->size)
 	{
@@ -29,9 +27,8 @@ int	get_median(t_stack *stack)
 		i++;
 	}
 	quicksort(arr, 0, stack->size);
-	median = arr[stack->size / 2];
-	if (stack->size % 2)
-		 median += 1;
+	stack->first_quart = arr[stack->size / 4];
+	stack->second_quart = arr[stack->size / 2];
+	stack->third_quart = arr[(stack->size / 4) + (stack->size / 2)];
 	free(arr);
-	return (median);
 }
