@@ -35,7 +35,7 @@ void	sort_large(t_stack *a, t_stack *b)
 
 	while (b->top > 0)
 	{
-		do_least_moves(a, b, 0);
+		do_least_moves(a, b); 
 	}
 
 	push_ab(a, b, 'a');
@@ -55,7 +55,7 @@ void	sort_large(t_stack *a, t_stack *b)
 
 	while (b->top > 0)
 	{
-		do_least_moves(a, b, 0);
+		do_least_moves(a, b);
 	}
 
 	push_ab(a, b, 'a');
@@ -75,7 +75,7 @@ void	sort_large(t_stack *a, t_stack *b)
 
 	while (b->top > 0)
 	{
-		do_least_moves(a, b, 0);
+		do_least_moves(a, b);
 	}
 
 	push_ab(a, b, 'a');
@@ -95,7 +95,7 @@ void	sort_large(t_stack *a, t_stack *b)
 
 	while (b->top > 0)
 	{
-		do_least_moves(a, b, 0);
+		do_least_moves(a, b);
 	}
 
 	push_ab(a, b, 'a');

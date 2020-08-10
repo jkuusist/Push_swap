@@ -16,7 +16,6 @@
 void	sort_stack(t_stack *a, t_stack *b)
 {
 	int i;
-//	int median;
 
 	i = 0;
 	a->median = get_median(a);
@@ -34,10 +33,8 @@ void	sort_stack(t_stack *a, t_stack *b)
 	{
 		if (stack_peek(a) <= a->median)
 			push_ab(a, b, 'b');
-			//stack_push(b, stack_pop(a));
 		else
 			rotate_ab(a, 'a');
-			//rotate_stack(a);
 		i++;
 	}
 /*	
@@ -59,21 +56,18 @@ void	sort_stack(t_stack *a, t_stack *b)
 
 	while (b->top > 0)
 	{
-		do_least_moves(a, b, 0);
+		do_least_moves(a, b);
 	}
 
 	push_ab(a, b, 'a');
-	//stack_push(a, stack_pop(b));
 
 	i = 0;
 	while (i < (int)a->size)
 	{
 		if (stack_peek(a) > a->median)
 			push_ab(a, b, 'b');
-			//stack_push(b, stack_pop(a));
 		else
 			rotate_ab(a, 'a');
-			//rotate_stack(a);
 		i++;
 	}
 
@@ -86,18 +80,16 @@ void	sort_stack(t_stack *a, t_stack *b)
 
 	while (b->top > 0)
 	{
-		do_least_moves(a, b, 0);
+		do_least_moves(a, b);
 	}
 
-	
 	push_ab(a, b, 'a');
-	//stack_push(a, stack_pop(b));
-/*
+
 	ft_printf("\nSTACK A:\n");
 	print_stack(a);
 
 	ft_printf("STACK B:\n");
 	print_stack(b);
 	ft_printf("\n");
-*/
+
 }

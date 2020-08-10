@@ -43,7 +43,7 @@ int				get_median(t_stack *stack);
 void			quicksort(int *arr, int start, int end);
 int				get_smallest(t_stack *stack);
 int				get_largest(t_stack *stack);
-void			do_least_moves(t_stack *a, t_stack *b, int is_largest);
+void			do_least_moves(t_stack *a, t_stack *b);
 void			print_stack(t_stack *stack);
 void			push_ab(t_stack *a, t_stack *b, char id);
 void			sort_small(t_stack *a, t_stack *b);
