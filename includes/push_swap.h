@@ -24,6 +24,10 @@ typedef struct	s_stack
 	int 			first_quart;
 	int 			second_quart;
 	int 			third_quart;
+	int				small_rot;
+	int				small_rrot;
+	int				large_rot;
+	int				large_rrot;
 }				t_stack;
 
 t_stack			*create_stack(unsigned int new_size);

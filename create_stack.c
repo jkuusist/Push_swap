@@ -12,6 +12,7 @@
 
 #include "includes/push_swap.h"
 #include <stdlib.h>
+#include <limits.h>
 
 t_stack	*create_stack(unsigned int new_size)
 {
@@ -23,5 +24,9 @@ t_stack	*create_stack(unsigned int new_size)
 	new_stack->top = -1;
 	if (!(new_stack->arr = (int*)malloc(sizeof(int) * new_size)))
 		exit (-1);
+	new_stack->small_rot = INT_MIN;
+	new_stack->small_rrot = INT_MIN;
+	new_stack->large_rot = INT_MIN;
+	new_stack->large_rrot = INT_MIN;
 	return (new_stack);
 }

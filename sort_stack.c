@@ -31,7 +31,7 @@ void	sort_stack(t_stack *a, t_stack *b)
 */	
 	while (i < (int)a->size)
 	{
-		if (stack_peek(a) <= a->median)
+		if (stack_peek(a) /*<=*/ > a->median)
 			push_ab(a, b, 'b');
 		else
 			rotate_ab(a, 'a');
@@ -64,7 +64,7 @@ void	sort_stack(t_stack *a, t_stack *b)
 	i = 0;
 	while (i < (int)a->size)
 	{
-		if (stack_peek(a) > a->median)
+		if (stack_peek(a) /*>*/ <= a->median)
 			push_ab(a, b, 'b');
 		else
 			rotate_ab(a, 'a');
