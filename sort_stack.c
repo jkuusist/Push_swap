@@ -16,10 +16,10 @@
 void	sort_stack(t_stack *a, t_stack *b)
 {
 	int i;
-	int median;
+//	int median;
 
 	i = 0;
-	median = get_median(a);
+	a->median = get_median(a);
 /*
 	ft_printf("median is %d\n", median);
 	
@@ -32,7 +32,7 @@ void	sort_stack(t_stack *a, t_stack *b)
 */	
 	while (i < (int)a->size)
 	{
-		if (stack_peek(a) <= median)
+		if (stack_peek(a) <= a->median)
 			push_ab(a, b, 'b');
 			//stack_push(b, stack_pop(a));
 		else
@@ -68,7 +68,7 @@ void	sort_stack(t_stack *a, t_stack *b)
 	i = 0;
 	while (i < (int)a->size)
 	{
-		if (stack_peek(a) > median)
+		if (stack_peek(a) > a->median)
 			push_ab(a, b, 'b');
 			//stack_push(b, stack_pop(a));
 		else

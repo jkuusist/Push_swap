@@ -20,6 +20,10 @@ typedef struct	s_stack
 	int				*arr;
 	int				smallest;
 	int				largest;
+	int				median;
+	int 			first_quart;
+	int 			second_quart;
+	int 			third_quart;
 }				t_stack;
 
 t_stack			*create_stack(unsigned int new_size);
