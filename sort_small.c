@@ -32,12 +32,12 @@ static void	sort_three(t_stack *a)
 	else if ((a->arr[0] > a->arr[2]) && (a->arr[1] > a->arr[2]))
 		rotate_ab(a, 'a');
 	else if (a->arr[0] > a->arr[2])
-		rev_rotate_ab(a, 'a');
+		rev_rotate_ab(a, 'a', 1);
 	else if (a->arr[2] > a->arr[1])
 	{
 		rotate_ab(a, 'a');
 		swap_ab(a, 'a');
-		rev_rotate_ab(a, 'a');
+		rev_rotate_ab(a, 'a', 1);
 	}
 	else if (a->arr[1] > a->arr[2])
 		swap_ab(a, 'a');
