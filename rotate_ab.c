@@ -15,14 +15,17 @@
 
 void	rotate_ab(t_stack *stack, char id)
 {
-	if (id == 'a')
+	if (stack->top > 1)
 	{
-		rotate_stack(stack);
-		ft_printf("ra\n");
-	}
-	else if (id == 'b')
-	{
-		rotate_stack(stack);
-		ft_printf("rb\n");
+		if (id == 'a')
+		{
+			rotate_stack(stack);
+			ft_printf("ra\n");
+		}
+		else if (id == 'b')
+		{
+			rotate_stack(stack);
+			ft_printf("rb\n");
+		}
 	}
 }

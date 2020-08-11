@@ -17,12 +17,18 @@ void	push_ab(t_stack *a, t_stack *b, char id)
 {
 	if (id == 'a')
 	{
-		stack_push(a, stack_pop(b));
-		ft_printf("pa\n");
+		if (b->top > 0)
+		{
+			stack_push(a, stack_pop(b));
+			ft_printf("pa\n");
+		}
 	}
 	else if (id == 'b')
 	{
-		stack_push(b, stack_pop(a));
-		ft_printf("pb\n");
+		if (a->top > 0)
+		{
+			stack_push(b, stack_pop(a));
+			ft_printf("pb\n");
+		}
 	}
 }

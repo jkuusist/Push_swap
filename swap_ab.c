@@ -15,15 +15,18 @@
 
 void	swap_ab(t_stack *stack, char id)
 {
-	if (id == 'a')
+	if (stack->top > 1)
 	{
-		swap_elems(stack);
-		ft_printf("sa\n");
-	}
-	else if (id == 'b')
-	{
-		swap_elems(stack);
-		ft_printf("sb\n");
+		if (id == 'a')
+		{
+			swap_elems(stack);
+			ft_printf("sa\n");
+		}
+		else if (id == 'b')
+		{
+			swap_elems(stack);
+			ft_printf("sb\n");
+		}
 	}
 }
 
