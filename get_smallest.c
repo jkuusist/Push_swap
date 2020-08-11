@@ -26,12 +26,16 @@ int	get_smallest(t_stack *stack)
 		res = 0;
 		while (i <= (int)stack->top)
 		{
-//			ft_printf("arr[%d] is %d\narr[res] is %d\nres is %d\n", i, stack->arr[i], stack->arr[res], res);
+//			ft_printf("SMAL: arr[%d] is %d. arr[res] is %d. res is %d\n", i, stack->arr[i], stack->arr[res], res);
 
 			if (stack->arr[i] < stack->arr[res])
+			{
+//				ft_printf("SMAL if\n");
 				res = i;
+			}
 			i++;
 		}
+//	ft_printf("SMAL: returned res is %d\n", res);
 		return (res);
 	}
 	return (-1);

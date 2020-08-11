@@ -19,9 +19,6 @@ void	sort_large(t_stack *a, t_stack *b)
 
 	i = 0;
 	get_quarts(a);
-
-//	ft_printf("first is %d\nsecond is %d\nthird is %d\n", a->first_quart, a->second_quart, a->third_quart);
-
 	while (i < (int)a->size)
 	{
 		if (stack_peek(a) <= a->first_quart)
@@ -32,16 +29,10 @@ void	sort_large(t_stack *a, t_stack *b)
 	}
 	b->smallest = b->arr[get_smallest(b)];
 	b->largest = b->arr[get_largest(b)];
-
 	while (b->top > 0)
-	{
 		do_least_moves(a, b); 
-	}
-
 	push_ab(a, b, 'a');
-
 	i = 0;
-	
 	while (i < (int)a->size)
 	{
 		if ((stack_peek(a) > a->first_quart) && (stack_peek(a) <= a->second_quart))
@@ -52,16 +43,10 @@ void	sort_large(t_stack *a, t_stack *b)
 	}
 	b->smallest = b->arr[get_smallest(b)];
 	b->largest = b->arr[get_largest(b)];
-
 	while (b->top > 0)
-	{
 		do_least_moves(a, b);
-	}
-
 	push_ab(a, b, 'a');
-
 	i = 0;
-
 	while (i < (int)a->size)
 	{
 		if ((stack_peek(a) > a->second_quart) && (stack_peek(a) <= a->third_quart))
@@ -72,16 +57,10 @@ void	sort_large(t_stack *a, t_stack *b)
 	}
 	b->smallest = b->arr[get_smallest(b)];
 	b->largest = b->arr[get_largest(b)];
-
 	while (b->top > 0)
-	{
 		do_least_moves(a, b);
-	}
-
 	push_ab(a, b, 'a');
-
 	i = 0;
-
 	while (i < (int)a->size)
 	{
 		if (stack_peek(a) > a->third_quart)
@@ -92,19 +71,7 @@ void	sort_large(t_stack *a, t_stack *b)
 	}
 	b->smallest = b->arr[get_smallest(b)];
 	b->largest = b->arr[get_largest(b)];
-
 	while (b->top > 0)
-	{
 		do_least_moves(a, b);
-	}
-
 	push_ab(a, b, 'a');
-/*
-	ft_printf("\nSTACK A:\n");
-	print_stack(a);
-
-	ft_printf("STACK B:\n");
-	print_stack(b);
-	ft_printf("\n");
-*/
 }

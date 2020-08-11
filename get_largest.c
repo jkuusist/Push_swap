@@ -25,14 +25,20 @@ int	get_largest(t_stack *stack)
 		i = 1;
 		res = 0;
 		
-//		ft_printf("stack->top is %u\n", stack->top);
+//		ft_printf("LARG: stack->top is %u\n", stack->top);
 
 		while (i < (int)stack->top)
 		{
+		
+//ft_printf("LARG: arr[%d] is %d. arr[res] is %d. res is %d\n", i, stack->arr[i], stack->arr[res], res);	
 			if (stack->arr[i] > stack->arr[res])
+			{
+//				ft_printf("LARG if\n");
 				res = i;
+			}
 			i++;
 		}
+//	ft_printf("LARG: returned res is %d\n", res);
 		return (res);
 	}
 	return (-1);
