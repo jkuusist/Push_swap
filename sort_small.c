@@ -16,7 +16,7 @@
 static void	sort_two(t_stack *a)
 {
 	if (a->arr[0] > a->arr[1])
-		swap_ab(a, 'a');
+		swap_ab(a, 'a', 1);
 }
 
 static void	sort_three(t_stack *a)
@@ -27,7 +27,7 @@ static void	sort_three(t_stack *a)
 	if ((a->arr[0] > a->arr[2]) && (a->arr[1] > a->arr[2]) && (a->arr[0] > a->arr[1]))
 	{
 		rotate_ab(a, 'a', 1);
-		swap_ab(a, 'a');
+		swap_ab(a, 'a', 1);
 	}
 	else if ((a->arr[0] > a->arr[2]) && (a->arr[1] > a->arr[2]))
 		rotate_ab(a, 'a', 1);
@@ -36,11 +36,11 @@ static void	sort_three(t_stack *a)
 	else if (a->arr[2] > a->arr[1])
 	{
 		rotate_ab(a, 'a', 1);
-		swap_ab(a, 'a');
+		swap_ab(a, 'a', 1);
 		rev_rotate_ab(a, 'a', 1);
 	}
 	else if (a->arr[1] > a->arr[2])
-		swap_ab(a, 'a');
+		swap_ab(a, 'a', 1);
 }
 
 static void	sort_four(t_stack *a, t_stack *b)

@@ -53,7 +53,7 @@ void			push_ab(t_stack *a, t_stack *b, char id, int is_print);
 void			sort_small(t_stack *a, t_stack *b);
 void			rotate_ab(t_stack *stack, char id, int is_print);
 void			rev_rotate_ab(t_stack *stack, char id, int is_print);
-void			swap_ab(t_stack *stack, char id);
+void			swap_ab(t_stack *stack, char id, int is_print);
 void			sort_large(t_stack *a, t_stack *b);
 void			get_quarts(t_stack *stack);
 

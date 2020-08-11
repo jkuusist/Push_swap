@@ -13,19 +13,21 @@
 #include "includes/push_swap.h"
 #include "libft/libft.h"
 
-void	swap_ab(t_stack *stack, char id)
+void	swap_ab(t_stack *stack, char id, int is_print)
 {
 	if (stack->top > 0)
 	{
 		if (id == 'a')
 		{
 			swap_elems(stack);
-			ft_printf("sa\n");
+			if (is_print)
+				ft_printf("sa\n");
 		}
 		else if (id == 'b')
 		{
 			swap_elems(stack);
-			ft_printf("sb\n");
+			if (is_print)
+				ft_printf("sb\n");
 		}
 	}
 }
