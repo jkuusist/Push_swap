@@ -33,12 +33,13 @@ int		main(int argc, char **argv)
 		ret = 1;
 		while (ret != 0)
 		{
+/*
 			ft_printf("STACK A:\n");
 			print_stack(a);
 			ft_printf("STACK B:\n");
 			print_stack(b);
 			ft_printf("\n");
-
+*/
 			ret = get_next_line(0, &s);
 			if (ret == 1)
 			{

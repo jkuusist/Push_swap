@@ -81,10 +81,10 @@ void		sort_small(t_stack *a, t_stack *b)
 		sort_five(a, b);
 /*
 	print_stack(a);
-*/
+
 	if (is_sorted(a))
 		ft_printf("OK\n");
 	else
 		ft_printf("NOPE\n");
-
+*/
 }

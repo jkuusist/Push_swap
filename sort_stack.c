@@ -46,10 +46,11 @@ void	sort_stack(t_stack *a, t_stack *b)
 	while (b->top > 0)
 		do_least_moves(a, b);
 	push_ab(a, b, 'a', 1);
-
+/*
 	print_stack(a);
 	if (is_sorted(a))
 		ft_printf("OK\n");
 	else
 		ft_printf("NOPE\n");
+*/
 }
