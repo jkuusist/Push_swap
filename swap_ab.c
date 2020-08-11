@@ -15,7 +15,7 @@
 
 void	swap_ab(t_stack *stack, char id)
 {
-	if (stack->top > 1)
+	if (stack->top > 0)
 	{
 		if (id == 'a')
 		{
