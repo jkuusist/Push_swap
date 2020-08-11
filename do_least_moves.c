@@ -16,20 +16,20 @@
 
 void		do_least_moves(t_stack *a, t_stack *b)
 {
-	int smallest_i;
+	int largest_i;
 	
-	smallest_i = get_smallest(b);
+	largest_i = get_largest(b);
 
-	if ((b->top - smallest_i) < (smallest_i + 1))
+	if ((b->top - largest_i) < (largest_i + 1))
 	{
-		while (b->arr[b->top] != b->smallest)
+		while (b->arr[b->top] != b->largest)
 		{
 			rotate_ab(b, 'b', 1);
 		}
 	}
 	else
 	{
-		while (b->arr[b->top] != b->smallest)
+		while (b->arr[b->top] != b->largest)
 		{
 			rev_rotate_ab(b, 'b', 1);
 		}
