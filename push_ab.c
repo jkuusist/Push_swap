@@ -17,7 +17,7 @@ void	push_ab(t_stack *a, t_stack *b, char id)
 {
 	if (id == 'a')
 	{
-		if (b->top > 0)
+		if (b->top > -1)
 		{
 			stack_push(a, stack_pop(b));
 			ft_printf("pa\n");
@@ -25,7 +25,7 @@ void	push_ab(t_stack *a, t_stack *b, char id)
 	}
 	else if (id == 'b')
 	{
-		if (a->top > 0)
+		if (a->top > -1)
 		{
 			stack_push(b, stack_pop(a));
 			ft_printf("pb\n");
