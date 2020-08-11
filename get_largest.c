@@ -27,7 +27,7 @@ int	get_largest(t_stack *stack)
 		
 //		ft_printf("LARG: stack->top is %u\n", stack->top);
 
-		while (i < (int)stack->top)
+		while (i <= (int)stack->top)
 		{
 		
 //ft_printf("LARG: arr[%d] is %d. arr[res] is %d. res is %d\n", i, stack->arr[i], stack->arr[res], res);	

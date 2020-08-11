@@ -13,14 +13,15 @@
 #include "includes/push_swap.h"
 #include "libft/libft.h"
 
-void	push_ab(t_stack *a, t_stack *b, char id)
+void	push_ab(t_stack *a, t_stack *b, char id, int is_print)
 {
 	if (id == 'a')
 	{
 		if (b->top > -1)
 		{
 			stack_push(a, stack_pop(b));
-			ft_printf("pa\n");
+			if (is_print)
+				ft_printf("pa\n");
 		}
 	}
 	else if (id == 'b')
@@ -28,7 +29,8 @@ void	push_ab(t_stack *a, t_stack *b, char id)
 		if (a->top > -1)
 		{
 			stack_push(b, stack_pop(a));
-			ft_printf("pb\n");
+			if (is_print)
+				ft_printf("pb\n");
 		}
 	}
 }

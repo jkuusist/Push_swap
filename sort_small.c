@@ -52,9 +52,10 @@ static void	sort_four(t_stack *a, t_stack *b)
 	{
 		rotate_ab(a, 'a');
 	}
-	push_ab(a, b, 'b');
+
+	push_ab(a, b, 'b', 1);
 	sort_three(a);
-	push_ab(a, b, 'a');
+	push_ab(a, b, 'a', 1);
 }
 
 static void	sort_five(t_stack *a, t_stack *b)
@@ -64,9 +65,9 @@ static void	sort_five(t_stack *a, t_stack *b)
 	largest = a->arr[get_largest(a)];
 	while (a->arr[a->top] != largest)
 		rotate_ab(a, 'a');
-	push_ab(a, b, 'b');
+	push_ab(a, b, 'b', 1);
 	sort_four(a, b);
-	push_ab(a, b, 'a');
+	push_ab(a, b, 'a', 1);
 }
 
 void		sort_small(t_stack *a, t_stack *b)
@@ -79,4 +80,10 @@ void		sort_small(t_stack *a, t_stack *b)
 		sort_four(a, b);
 	else if (a->top == 4)
 		sort_five(a, b);
+/*
+	if (is_sorted(a))
+		ft_printf("OK\n");
+	else
+		ft_printf("NOPE\n");
+*/
 }
