@@ -13,19 +13,21 @@
 #include "includes/push_swap.h"
 #include "libft/libft.h"
 
-void	rotate_ab(t_stack *stack, char id)
+void	rotate_ab(t_stack *stack, char id, int is_print)
 {
 	if (stack->top > 0)
 	{
 		if (id == 'a')
 		{
 			rotate_stack(stack);
-			ft_printf("ra\n");
+			if (is_print)
+				ft_printf("ra\n");
 		}
 		else if (id == 'b')
 		{
 			rotate_stack(stack);
-			ft_printf("rb\n");
+			if (is_print)
+				ft_printf("rb\n");
 		}
 	}
 }

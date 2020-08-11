@@ -24,7 +24,7 @@ void	sort_large(t_stack *a, t_stack *b)
 		if (stack_peek(a) <= a->first_quart)
 			push_ab(a, b, 'b', 1);
 		else
-			rotate_ab(a, 'a');
+			rotate_ab(a, 'a', 1);
 		i++;
 	}
 	b->smallest = b->arr[get_smallest(b)];
@@ -38,7 +38,7 @@ void	sort_large(t_stack *a, t_stack *b)
 		if ((stack_peek(a) > a->first_quart) && (stack_peek(a) <= a->second_quart))
 			push_ab(a, b, 'b', 1);
 		else
-			rotate_ab(a, 'a');
+			rotate_ab(a, 'a', 1);
 		i++;
 	}
 	b->smallest = b->arr[get_smallest(b)];
@@ -52,7 +52,7 @@ void	sort_large(t_stack *a, t_stack *b)
 		if ((stack_peek(a) > a->second_quart) && (stack_peek(a) <= a->third_quart))
 			push_ab(a, b, 'b', 1);
 		else
-			rotate_ab(a, 'a');
+			rotate_ab(a, 'a', 1);
 		i++;
 	}
 	b->smallest = b->arr[get_smallest(b)];
@@ -66,7 +66,7 @@ void	sort_large(t_stack *a, t_stack *b)
 		if (stack_peek(a) > a->third_quart)
 			push_ab(a, b, 'b', 1);
 		else
-			rotate_ab(a, 'a');
+			rotate_ab(a, 'a', 1);
 		i++;
 	}
 	b->smallest = b->arr[get_smallest(b)];

@@ -24,7 +24,7 @@ void	sort_stack(t_stack *a, t_stack *b)
 		if (stack_peek(a) <= a->median)
 			push_ab(a, b, 'b', 1);
 		else
-			rotate_ab(a, 'a');
+			rotate_ab(a, 'a', 1);
 		i++;
 	}
 	b->smallest = b->arr[get_smallest(b)];
@@ -38,7 +38,7 @@ void	sort_stack(t_stack *a, t_stack *b)
 		if (stack_peek(a) > a->median)
 			push_ab(a, b, 'b', 1);
 		else
-			rotate_ab(a, 'a');
+			rotate_ab(a, 'a', 1);
 		i++;
 	}
 	b->smallest = b->arr[get_smallest(b)];

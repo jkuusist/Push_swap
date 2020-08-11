@@ -24,7 +24,7 @@ void		do_least_moves(t_stack *a, t_stack *b)
 	{
 		while (b->arr[b->top] != b->smallest)
 		{
-			rotate_ab(b, 'b');
+			rotate_ab(b, 'b', 1);
 		}
 	}
 	else

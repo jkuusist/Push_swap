@@ -51,7 +51,7 @@ void			do_least_moves(t_stack *a, t_stack *b);
 void			print_stack(t_stack *stack);
 void			push_ab(t_stack *a, t_stack *b, char id, int is_print);
 void			sort_small(t_stack *a, t_stack *b);
-void			rotate_ab(t_stack *stack, char id);
+void			rotate_ab(t_stack *stack, char id, int is_print);
 void			rev_rotate_ab(t_stack *stack, char id, int is_print);
 void			swap_ab(t_stack *stack, char id);
 void			sort_large(t_stack *a, t_stack *b);
