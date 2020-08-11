@@ -81,6 +81,7 @@ void		sort_small(t_stack *a, t_stack *b)
 	else if (a->top == 4)
 		sort_five(a, b);
 /*
+	print_stack(a);
 	if (is_sorted(a))
 		ft_printf("OK\n");
 	else
