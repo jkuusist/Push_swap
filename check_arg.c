@@ -18,6 +18,8 @@ int	check_arg(char *arg)
 	int			i;
 	long long	temp;
 
+	ft_printf("arg is: |%s|\n", arg);
+
 	(arg[0] == '-') ? (i = 1) : (i = 0);
 	while (arg[i])
 	{

@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 11:49:00 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/07/06 11:51:00 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/08/12 12:58:00 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,30 +16,106 @@
 int		main(int argc, char **argv)
 {
 	char	*s;
+	char	**temp;
 	int 	ret;
 	t_stack *a;
 	t_stack *b;
+	int		i;
 
 	if (argc > 1)
 	{
-		a = create_stack(argc - 1);	
-		b = create_stack(argc - 1);
-		if (!(convert_args(a, b, argv, argc)))
+		if ((argc <= 2) && (ft_strchr(argv[1], ' '))) //OR 3 WITH -v
 		{
-			destroy_stack(a);
-			destroy_stack(b);
-			return (-1);
+
+//		ft_printf("argv[1] is: |%s|\n", argv[1]);
+
+			temp = ft_strsplit(argv[1], ' ');
+/*
+			i = 0;
+
+			while (i < 4)
+			{
+				ft_printf("temp[%d] is: |%s|\n", i, temp[i]);
+				i++;
+			}
+*/			
+			i = 0;
+			while (temp[i] != NULL)
+			{
+//				ft_printf("temp[%d] is: |%s|\n", i, temp[i]);
+				i++;
+			}
+
+			ft_printf("i is %d\n", i);
+
+			a = create_stack(i);
+			b = create_stack(i);
+			if (!(convert_args(a, b, temp, (i /*+ 1*/))))
+			{
+				destroy_stack(a);
+				destroy_stack(b);
+				return (-1);
+			}
 		}
+		else
+		{
+		
+			ft_printf("argc - 1 is %d\n", argc - 1);
+
+			a = create_stack(argc - 1);	
+			b = create_stack(argc - 1);
+		
+
+//		ft_printf("argv[1] is: |%s|\n", argv[1]);
+
+			if (!(convert_args(a, b, argv, argc)))
+			{
+				destroy_stack(a);
+				destroy_stack(b);
+				return (-1);
+			}
+		}
+/*
+		else
+		{
+			temp = ft_strsplit(argv[1], ' ');
+
+			i = 0;
+
+			while (i < 10)
+			{
+				ft_printf("temp[%d] is: |%s|\n", i, temp[i]);
+				i++;
+			}
+
+			while (temp[i])
+			{
+//				ft_printf("temp[%d] is: |%s|\n", i, temp[i]);
+				i++;
+			}
+
+//			ft_printf("i is %d\n");
+
+			a = create_stack(i);
+			b = create_stack(i);
+			if (!(convert_args(a, b, temp, (i + 1))))
+			{
+				destroy_stack(a);
+				destroy_stack(b);
+				return (-1);
+			}
+		}
+*/
 		ret = 1;
 		while (ret != 0)
 		{
-/*
+
 			ft_printf("STACK A:\n");
 			print_stack(a);
 			ft_printf("STACK B:\n");
 			print_stack(b);
 			ft_printf("\n");
-*/
+
 			ret = get_next_line(0, &s);
 			if (ret == 1)
 			{

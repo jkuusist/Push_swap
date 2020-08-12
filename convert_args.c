@@ -12,26 +12,38 @@
 
 #include "includes/push_swap.h"
 #include "libft/libft.h"
+#include <stdlib.h>
 
 int	convert_args(t_stack *stack_a, t_stack *stack_b, char **argv, int argc)
 {
-	int i;
-
-//	i = 1;
+	int		i;
+		
 	i = argc - 1;
-//	while (i < argc)
-	while (i > 0)
+		
+		ft_printf("conv_arg's i is %d\n", i);
+
+	while ((i >= 0) && (ft_strcmp(argv[0], "checker")) && (ft_strcmp(argv[0], "push_swap")))
 	{
-		if (check_arg(argv[i])) 
+		ft_printf("argv[%d] is: |%s|\n", i, argv[i]);
+		
+		if (argv[i] && check_arg(argv[i]))
+		{
+//			ft_printf("1ca\n");
 			stack_push(stack_a, ft_atoi(argv[i]));
+		}
+		else if (!argv[i])
+		{
+//			ft_printf("2ca\n");
+			break;
+		}
 		else
 		{
+//			ft_printf("3ca\n");
 			ft_printf("Error\n");
 			destroy_stack(stack_a);
 			destroy_stack(stack_b);
 			return (0);
 		}
-//		i++;
 		i--;
 	}
 	if (has_duplicate(stack_a))
