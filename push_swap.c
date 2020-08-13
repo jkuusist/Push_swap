@@ -15,33 +15,61 @@
 
 int	main(int argc, char **argv)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-	
+	t_stack	*a;
+	t_stack	*b;
+	char	**temp;
+	int		i;	
+
 	if (argc > 1)
 	{
-		stack_a = create_stack(argc - 1);
-		stack_b = create_stack(argc - 1);
-		if (!convert_args(stack_a, stack_b, argv, argc))
+		if ((argc <= 2) && (ft_strchr(argv[1], ' '))) //OR 3 WITH -v
 		{
-			destroy_stack(stack_a);
-			destroy_stack(stack_b);
-			return (-1);
+			temp = ft_strsplit(argv[1], ' ');
+			i = 0;
+			while (temp[i] != NULL)
+				i++;
+			argc = i;
+			a = create_stack(i);
+			b = create_stack(i);
+			if (!convert_args(a, b, temp, i))	
+			{
+				destroy_stack(a);
+				destroy_stack(b);
+				return (-1);
+			}
 		}
-		if (is_sorted(stack_a))
+		else
 		{
-			destroy_stack(stack_a);
-			destroy_stack(stack_b);
+			a = create_stack(argc - 1);
+			b = create_stack(argc - 1);
+			if (!convert_args(a, b, argv, argc))
+			{
+				destroy_stack(a);
+				destroy_stack(b);
+				return (-1);
+			}
+		}
+/*
+		ft_printf("STACK_A:\n");
+		print_stack(a);
+		ft_printf("STACK_B:\n");
+		print_stack(b);
+		ft_printf("\n");
+*/
+		if (is_sorted(a))
+		{
+			destroy_stack(a);
+			destroy_stack(b);
 			return (0);
 		}
 		if (argc >= 500)
-			sort_large(stack_a, stack_b);
+			sort_large(a, b);
 		else if (argc <= 6)
-			sort_small(stack_a, stack_b);
+			sort_small(a, b);
 		else
-			sort_stack(stack_a, stack_b);
-		destroy_stack(stack_a);
-		destroy_stack(stack_b);
+			sort_stack(a, b);
+		destroy_stack(a);
+		destroy_stack(b);
 	}
 	return (0);
 }

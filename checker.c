@@ -27,6 +27,7 @@ int		main(int argc, char **argv)
 		if ((argc <= 2) && (ft_strchr(argv[1], ' '))) //OR 3 WITH -v
 		{
 
+//		ft_printf("c1\n");
 //		ft_printf("argv[1] is: |%s|\n", argv[1]);
 
 			temp = ft_strsplit(argv[1], ' ');
@@ -46,7 +47,7 @@ int		main(int argc, char **argv)
 				i++;
 			}
 
-			ft_printf("i is %d\n", i);
+//			ft_printf("i is %d\n", i);
 
 			a = create_stack(i);
 			b = create_stack(i);
@@ -59,21 +60,21 @@ int		main(int argc, char **argv)
 		}
 		else
 		{
-		
-			ft_printf("argc - 1 is %d\n", argc - 1);
+//			ft_printf("c2\n");
+//			ft_printf("argc - 1 is %d\n", argc - 1);
 
 			a = create_stack(argc - 1);	
-			b = create_stack(argc - 1);
-		
+			b = create_stack(argc - 1);	
 
 //		ft_printf("argv[1] is: |%s|\n", argv[1]);
-
-			if (!(convert_args(a, b, argv, argc)))
+		
+		if (!(convert_args(a, b, argv, argc)))
 			{
 				destroy_stack(a);
 				destroy_stack(b);
 				return (-1);
 			}
+			
 		}
 /*
 		else
@@ -109,13 +110,13 @@ int		main(int argc, char **argv)
 		ret = 1;
 		while (ret != 0)
 		{
-
+/*
 			ft_printf("STACK A:\n");
 			print_stack(a);
 			ft_printf("STACK B:\n");
 			print_stack(b);
 			ft_printf("\n");
-
+*/
 			ret = get_next_line(0, &s);
 			if (ret == 1)
 			{
