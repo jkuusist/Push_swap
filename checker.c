@@ -76,37 +76,7 @@ int		main(int argc, char **argv)
 			}
 			
 		}
-/*
-		else
-		{
-			temp = ft_strsplit(argv[1], ' ');
 
-			i = 0;
-
-			while (i < 10)
-			{
-				ft_printf("temp[%d] is: |%s|\n", i, temp[i]);
-				i++;
-			}
-
-			while (temp[i])
-			{
-//				ft_printf("temp[%d] is: |%s|\n", i, temp[i]);
-				i++;
-			}
-
-//			ft_printf("i is %d\n");
-
-			a = create_stack(i);
-			b = create_stack(i);
-			if (!(convert_args(a, b, temp, (i + 1))))
-			{
-				destroy_stack(a);
-				destroy_stack(b);
-				return (-1);
-			}
-		}
-*/
 		ret = 1;
 		while (ret != 0)
 		{
