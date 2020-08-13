@@ -58,6 +58,7 @@ int	main(int argc, char **argv)
 */
 		if (is_sorted(a))
 		{
+
 			destroy_stack(a);
 			destroy_stack(b);
 			return (0);
@@ -68,6 +69,18 @@ int	main(int argc, char **argv)
 			sort_small(a, b);
 		else
 			sort_stack(a, b);
+/*		
+		ft_printf("STACK_A:\n");
+		print_stack(a);
+		ft_printf("STACK_B:\n");
+		print_stack(b);
+		ft_printf("\n");
+
+		if (is_sorted(a))
+			ft_printf("FINE\n");
+		else
+			ft_printf("NOPE\n");
+*/		
 		destroy_stack(a);
 		destroy_stack(b);
 	}

@@ -21,37 +21,38 @@ static void	sort_two(t_stack *a)
 
 static void	sort_three(t_stack *a)
 {
+	int largest;
+
 	if (is_sorted(a))
 		return ;
-	if ((a->arr[0] < a->arr[2]) && (a->arr[1] < a->arr[2]) && (a->arr[0] < a->arr[1]))
-	{
-		rotate_ab(a, 'a', 1);
-		swap_ab(a, 'a', 1);
-	}
-	else if ((a->arr[0] < a->arr[2]) && (a->arr[1] < a->arr[2]))
-		rotate_ab(a, 'a', 1);
-	else if (a->arr[0] < a->arr[2])
+	largest = a->arr[get_largest(a)];
+	while (a->arr[0] != largest)
 		rev_rotate_ab(a, 'a', 1);
-	else if (a->arr[2] < a->arr[1])
-	{
-		rotate_ab(a, 'a', 1);
-		swap_ab(a, 'a', 1);
-		rev_rotate_ab(a, 'a', 1);
-	}
-	else if (a->arr[1] < a->arr[2])
+	if (a->arr[a->top] > a->arr[1])
 		swap_ab(a, 'a', 1);
 }
 
 static void	sort_four(t_stack *a, t_stack *b)
 {
+	int smallest_i;
 	int smallest;
 
-	smallest = a->arr[get_smallest(a)];
-	while (a->arr[a->top] != smallest)
+	smallest_i = get_smallest(a);
+	smallest = a->arr[smallest_i];
+	if ((a->top - smallest_i) < (smallest_i + 1))
 	{
-		rotate_ab(a, 'a', 1);
+		while (a->arr[a->top] != smallest)
+		{
+			rotate_ab(a, 'a', 1);
+		}
 	}
-
+	else
+	{
+		while (a->arr[a->top] != smallest)
+		{
+			rev_rotate_ab(a, 'a', 1);
+		}
+	}
 	push_ab(a, b, 'b', 1);
 	sort_three(a);
 	push_ab(a, b, 'a', 1);
@@ -59,11 +60,21 @@ static void	sort_four(t_stack *a, t_stack *b)
 
 static void	sort_five(t_stack *a, t_stack *b)
 {
+	int smallest_i;
 	int smallest;
 
-	smallest = a->arr[get_smallest(a)];
-	while (a->arr[a->top] != smallest)
-		rotate_ab(a, 'a', 1);
+	smallest_i = get_smallest(a);
+	smallest = a->arr[smallest_i];
+	if ((a->top - smallest_i) < (smallest_i + 1))
+	{
+		while (a->arr[a->top] != smallest)
+			rotate_ab(a, 'a', 1);
+	}
+	else
+	{
+		while (a->arr[a->top] != smallest)
+			rev_rotate_ab(a, 'a', 1);
+	}
 	push_ab(a, b, 'b', 1);
 	sort_four(a, b);
 	push_ab(a, b, 'a', 1);
@@ -79,12 +90,4 @@ void		sort_small(t_stack *a, t_stack *b)
 		sort_four(a, b);
 	else if (a->top == 4)
 		sort_five(a, b);
-/*
-	print_stack(a);
-
-	if (is_sorted(a))
-		ft_printf("OK\n");
-	else
-		ft_printf("NOPE\n");
-*/
 }
