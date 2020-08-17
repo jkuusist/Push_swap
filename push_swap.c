@@ -40,8 +40,6 @@ int	main(int argc, char **argv)
 					i--;
 				}
 				free(temp);
-//				destroy_stack(a);
-//				destroy_stack(b);
 				return (-1);
 			}
 			while (i >= 0)
@@ -56,11 +54,7 @@ int	main(int argc, char **argv)
 			a = create_stack(argc - 1);
 			b = create_stack(argc - 1);
 			if (!convert_args(a, b, argv, argc))
-			{
-//				destroy_stack(a);
-//				destroy_stack(b);
 				return (-1);
-			}
 		}
 		if (is_sorted(a))
 		{
