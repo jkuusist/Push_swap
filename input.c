@@ -13,7 +13,7 @@
 #include "includes/push_swap.h"
 #include "libft/libft.h"
 
-int		check_input(char *s)
+int			check_input(char *s)
 {
 	if (!ft_strcmp(s, "sa"))
 		return (1);
@@ -41,9 +41,8 @@ int		check_input(char *s)
 		return (0);
 }
 
-void	handle_input(char *s, t_stack *a, t_stack *b)
+static void	handle_sp(char *s, t_stack *a, t_stack *b)
 {
-
 	if (!ft_strcmp(s, "sa"))
 		swap_ab(a, 'a', 0);
 	else if (!ft_strcmp(s, "sb"))
@@ -57,7 +56,12 @@ void	handle_input(char *s, t_stack *a, t_stack *b)
 		push_ab(a, b, 'a', 0);
 	else if (!ft_strcmp(s, "pb"))
 		push_ab(a, b, 'b', 0);
-	else if (!ft_strcmp(s, "ra"))
+}
+
+void		handle_input(char *s, t_stack *a, t_stack *b)
+{
+	handle_sp(s, a, b);
+	if (!ft_strcmp(s, "ra"))
 		rotate_ab(a, 'a', 0);
 	else if (!ft_strcmp(s, "rb"))
 		rotate_ab(b, 'b', 0);
