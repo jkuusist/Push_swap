@@ -84,7 +84,7 @@ void		sort_small(t_stack *a, t_stack *b)
 {
 	if (a->top == 1)
 		sort_two(a);
-	else if	(a->top == 2)
+	else if (a->top == 2)
 		sort_three(a);
 	else if (a->top == 3)
 		sort_four(a, b);
