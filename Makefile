@@ -16,7 +16,7 @@ HEDR = includes/push_swap.h
 
 LIBFT = ./libft
 
-CHECKER_SRCS = checker.c checker_print.c check_arg.c convert_args.c create_stack.c destroy_stack.c handle_error.c has_duplicate.c is_sorted.c print_stack.c print_stacks.c push_ab.c reverse_rotate_stack.c rev_rotate_ab.c rotate_ab.c rotate_stack.c stack_pop.c stack_push.c swap_ab.c swap_elems.c
+CHECKER_SRCS = checker.c checker_print.c check_arg.c convert_args.c create_stack.c destroy_stack.c handle_error.c has_duplicate.c input.c is_sorted.c print_stack.c print_stacks.c push_ab.c reverse_rotate_stack.c rev_rotate_ab.c rotate_ab.c rotate_stack.c stack_pop.c stack_push.c swap_ab.c swap_elems.c
 
 PUSH_SWAP_SRCS = push_swap.c check_arg.c convert_args.c create_stack.c destroy_stack.c do_least_moves.c get_largest.c get_median.c get_quarts.c get_smallest.c handle_error.c has_duplicate.c is_sorted.c print_stack.c push_ab.c quicksort.c reverse_rotate_stack.c rev_rotate_ab.c rotate_ab.c rotate_stack.c sort_large.c sort_small.c sort_stack.c stack_peek.c stack_pop.c stack_push.c swap_ab.c swap_elems.c
 

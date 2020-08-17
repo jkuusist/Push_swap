@@ -14,6 +14,7 @@
 #include "libft/libft.h"
 #include <stdlib.h>
 
+
 int		main(int argc, char **argv)
 {
 	char	*s;
@@ -40,15 +41,12 @@ int		main(int argc, char **argv)
 			b = create_stack(i);
 			if (!(convert_args(a, b, temp, i)))
 			{
-//				ft_printf("free2\n");
 				while (i >= 0)
 				{
 					free(temp[i]);
 					i--;
 				}
 				free(temp);
-//				destroy_stack(a);
-//				destroy_stack(b);
 				return (-1);
 			}
 			while (i >= 0)
@@ -63,11 +61,7 @@ int		main(int argc, char **argv)
 			a = create_stack(argc - 1);
 			b = create_stack(argc - 1);
 			if (!(convert_args(a, b, argv, argc)))
-			{
-//				destroy_stack(a);
-//				destroy_stack(b);
 				return (-1);
-			}
 		}
 		ret = 1;
 		while (ret != 0)
@@ -75,39 +69,11 @@ int		main(int argc, char **argv)
 			ret = get_next_line(0, &s);
 			if (ret == 1)
 			{
-				if (!ft_strcmp(s, "sa"))
-					swap_ab(a, 'a', 0);
-				else if (!ft_strcmp(s, "sb"))
-					swap_ab(b, 'b', 0);
-				else if (!ft_strcmp(s, "ss"))
-				{
-					swap_ab(a, 'a', 0);
-					swap_ab(b, 'b', 0);
-				}
-				else if (!ft_strcmp(s, "pa"))
-					push_ab(a, b, 'a', 0);
-				else if (!ft_strcmp(s, "pb"))
-					push_ab(a, b, 'b', 0);
-				else if (!ft_strcmp(s, "ra"))
-					rotate_ab(a, 'a', 0);
-				else if (!ft_strcmp(s, "rb"))
-					rotate_ab(b, 'b', 0);
-				else if (!ft_strcmp(s, "rr"))
-				{
-					rotate_ab(a, 'a', 0);
-					rotate_ab(b, 'b', 0);
-				}
-				else if (!ft_strcmp(s, "rra"))
-					rev_rotate_ab(a, 'a', 0);
-				else if (!ft_strcmp(s, "rrb"))
-					rev_rotate_ab(b, 'b', 0);
-				else if (!ft_strcmp(s, "rrr"))
-				{
-					rev_rotate_ab(a, 'a', 0);
-					rev_rotate_ab(b, 'b', 0);
-				}
+				if (check_input(s))
+					handle_input(s, a, b);
 				else
 				{
+					free(s);
 					ft_printf("Error\n");
 					destroy_stack(a);
 					destroy_stack(b);
