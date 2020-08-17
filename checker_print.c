@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   checker_print.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/06 11:49:00 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/08/12 12:58:00 by jkuusist         ###   ########.fr       */
+/*   Created: 2020/08/14 10:52:00 by jkuusist          #+#    #+#             */
+/*   Updated: 2020/08/14 10:52:00 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 #include "libft/libft.h"
 
-int		main(int argc, char **argv)
+void	checker_print(int argc, char **argv)
 {
 	char	*s;
 	char	**temp;
-	int 	ret;
-	t_stack *a;
-	t_stack *b;
+	int		ret;
+	t_stack	*a;
+	t_stack	*b;
 	int		i;
 
-	if (!ft_strcmp(argv[1], "-v"))
+	if (argc > 1)
 	{
-		checker_print(argc, argv);
-		return (0);
-	}
-	else if (argc > 1)
-	{
-		if (((argc <= 2) && (ft_strchr(argv[1], ' ')))) //|| ((argc <= 3) && !ft_strcmp(argv[1], "-v") && ft_strchr(argv[2], ' '))) //OR 3 WITH -v
+
+		if (((argc <= 2) && (ft_strchr(argv[1], ' '))))
 		{
 
 //		ft_printf("c1\n");
@@ -60,7 +56,7 @@ int		main(int argc, char **argv)
 			{
 				destroy_stack(a);
 				destroy_stack(b);
-				return (-1);
+				return ;
 			}
 		}
 		else
@@ -77,7 +73,7 @@ int		main(int argc, char **argv)
 			{
 				destroy_stack(a);
 				destroy_stack(b);
-				return (-1);
+				return ;
 			}
 			
 		}
@@ -85,17 +81,12 @@ int		main(int argc, char **argv)
 		ret = 1;
 		while (ret != 0)
 		{
-
-			ft_printf("STACK A:\n");
-			print_stack(a);
-			ft_printf("STACK B:\n");
-			print_stack(b);
-			ft_printf("\n");
-
+			print_stacks(a, b);
+			
 			ret = get_next_line(0, &s);
 			if (ret == 1)
 			{
-//				ft_printf("s is |%s|\n", s);
+//				ft_printf("chcker_print: s is |%s|\n", s);
 				
 				if (!ft_strcmp(s, "sa"))
 					swap_ab(a, 'a', 0);
@@ -133,7 +124,7 @@ int		main(int argc, char **argv)
 					ft_printf("Error\n");
 					destroy_stack(a);
 					destroy_stack(b);
-					return (-1);
+					return ;
 				}
 			}
 		}
@@ -144,5 +135,4 @@ int		main(int argc, char **argv)
 		destroy_stack(a);
 		destroy_stack(b);
 	}
-	return (0);
 }

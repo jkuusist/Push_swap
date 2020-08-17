@@ -23,7 +23,7 @@ int	convert_args(t_stack *stack_a, t_stack *stack_b, char **argv, int argc)
 //		ft_printf("conv_arg's i is %d\n", i);
 //		ft_printf("argv[0] is |%s|\n", argv[0]);
 
-	while ((i >= 0) && (ft_strcmp(argv[i], "./checker")) && (ft_strcmp(argv[i], "./push_swap")))
+	while ((i >= 0) && (ft_strcmp(argv[i], "./checker")) && (ft_strcmp(argv[i], "./push_swap")) && (ft_strcmp(argv[i], "-v")))
 	{
 //		ft_printf("argv[%d] is: |%s|\n", i, argv[i]);
 		
