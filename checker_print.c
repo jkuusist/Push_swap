@@ -12,6 +12,7 @@
 
 #include "includes/push_swap.h"
 #include "libft/libft.h"
+#include <stdlib.h>
 
 void	checker_print(int argc, char **argv)
 {
@@ -34,10 +35,23 @@ void	checker_print(int argc, char **argv)
 			b = create_stack(i);
 			if (!(convert_args(a, b, temp, i)))
 			{
-				destroy_stack(a);
-				destroy_stack(b);
+				while (i >= 0)
+				{
+					free(temp[i]);
+					i--;
+				}
+				free(temp);
+
+//				destroy_stack(a);
+//				destroy_stack(b);
 				return ;
 			}
+			while (i >= 0)
+			{
+				free(temp[i]);
+				i--;
+			}
+			free(temp);
 		}
 		else
 		{
@@ -45,8 +59,8 @@ void	checker_print(int argc, char **argv)
 			b = create_stack(argc - 1);
 			if (!(convert_args(a, b, argv, argc)))
 			{
-				destroy_stack(a);
-				destroy_stack(b);
+//				destroy_stack(a);
+//				destroy_stack(b);
 				return ;
 			}
 		}
@@ -96,6 +110,7 @@ void	checker_print(int argc, char **argv)
 					return ;
 				}
 			}
+			free(s);
 		}
 		if ((b->top == -1) && is_sorted(a))
 			ft_printf("OK\n");

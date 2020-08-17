@@ -14,7 +14,25 @@
 #include "libft/libft.h"
 #include <stdlib.h>
 
-
+static void	convert_split(char **temp, t_stack *a, t_stack *b, int i)
+{
+	if (!(convert_args(a, b, temp, i)))
+	{
+		while (i >= 0)
+		{
+			free(temp[i]);
+			i--;
+		}
+		free(temp);
+		return ;
+	}
+	while (i >= 0)
+	{
+		free(temp[i]);
+		i--;
+	}
+	free(temp);
+}
 
 int		main(int argc, char **argv)
 {
@@ -23,7 +41,6 @@ int		main(int argc, char **argv)
 	int		ret;
 	t_stack *a;
 	t_stack *b;
-	int		i;
 
 	if (argc > 1)
 	{
@@ -35,27 +52,12 @@ int		main(int argc, char **argv)
 		else if (((argc <= 2) && (ft_strchr(argv[1], ' '))))
 		{
 			temp = ft_strsplit(argv[1], ' ');
-			i = 0;
-			while (temp[i] != NULL)
-				i++;
-			a = create_stack(i);
-			b = create_stack(i);
-			if (!(convert_args(a, b, temp, i)))
-			{
-				while (i >= 0)
-				{
-					free(temp[i]);
-					i--;
-				}
-				free(temp);
-				return (-1);
-			}
-			while (i >= 0)
-			{
-				free(temp[i]);
-				i--;
-			}
-			free(temp);
+			ret = 0;
+			while (temp[ret] != NULL)
+				ret++;
+			a = create_stack(ret);
+			b = create_stack(ret);
+			convert_split(temp, a, b, ret);
 		}
 		else
 		{

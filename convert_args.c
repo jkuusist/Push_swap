@@ -22,12 +22,15 @@ int	convert_args(t_stack *stack_a, t_stack *stack_b, char **argv, int argc)
 	while ((i >= 0) && (ft_strcmp(argv[i], "./checker")) && (ft_strcmp(argv[i], "./push_swap"))
 		&& (ft_strcmp(argv[i], "-v")))
 	{
+//		ft_printf("argv[%d] is |%s|\n", i, argv[i]);
+
 		if (argv[i] && check_arg(argv[i]))
 			stack_push(stack_a, ft_atoi(argv[i]));
 		else if (!argv[i])
 			break ;
 		else
 		{
+//			ft_printf("conv1\n");
 /*
 			ft_printf("Error\n");
 			destroy_stack(stack_a);
@@ -40,6 +43,7 @@ int	convert_args(t_stack *stack_a, t_stack *stack_b, char **argv, int argc)
 	}
 	if (has_duplicate(stack_a))
 	{
+//		ft_printf("conv2\n");
 /*
 		ft_printf("Error\n");
 		destroy_stack(stack_a);
