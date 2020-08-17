@@ -40,14 +40,15 @@ int		main(int argc, char **argv)
 			b = create_stack(i);
 			if (!(convert_args(a, b, temp, i)))
 			{
-				ft_printf("free2\n");
+//				ft_printf("free2\n");
 				while (i >= 0)
 				{
-					free(temp);
+					free(temp[i]);
 					i--;
 				}
-				destroy_stack(a);
-				destroy_stack(b);
+				free(temp);
+//				destroy_stack(a);
+//				destroy_stack(b);
 				return (-1);
 			}
 			while (i >= 0)
@@ -55,6 +56,7 @@ int		main(int argc, char **argv)
 				free(temp[i]);
 				i--;
 			}
+			free(temp);
 		}
 		else
 		{
@@ -62,8 +64,8 @@ int		main(int argc, char **argv)
 			b = create_stack(argc - 1);
 			if (!(convert_args(a, b, argv, argc)))
 			{
-				destroy_stack(a);
-				destroy_stack(b);
+//				destroy_stack(a);
+//				destroy_stack(b);
 				return (-1);
 			}
 		}

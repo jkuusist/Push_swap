@@ -22,7 +22,7 @@ void	reverse_rotate_stack(t_stack *stack)
 	{
 		btm_temp = stack->arr[0];
 		i = 0;
-		while (i <= stack->top)
+		while (i < stack->top)
 		{
 			stack->arr[i] = stack->arr[i + 1];
 			i++;
