@@ -111,6 +111,7 @@ int		main(int argc, char **argv)
 					destroy_stack(b);
 					return (-1);
 				}
+				free(s);
 			}
 		}
 		if ((b->top == -1) && is_sorted(a))
