@@ -21,9 +21,9 @@ typedef struct	s_stack
 	int				smallest;
 	int				largest;
 	int				median;
-	int 			first_quart;
-	int 			second_quart;
-	int 			third_quart;
+	int				first_quart;
+	int				second_quart;
+	int				third_quart;
 	int				small_rot;
 	int				small_rrot;
 	int				large_rot;
@@ -40,7 +40,8 @@ void			reverse_rotate_stack(t_stack *stack);
 int				is_sorted(t_stack *stack);
 int				has_duplicate(t_stack *stack);
 int				check_arg(char *arg);
-int				convert_args(t_stack *stack_a, t_stack *stack_b, char **argv, int argc);
+int				convert_args(t_stack *stack_a, t_stack *stack_b,
+				char **argv, int argc);
 int				stack_peek(t_stack *stack);
 void			sort_stack(t_stack *a, t_stack *b);
 int				get_median(t_stack *stack);
