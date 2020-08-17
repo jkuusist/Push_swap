@@ -24,9 +24,9 @@ void	checker_print(int argc, char **argv)
 
 	if (argc > 1)
 	{
-		if (((argc <= 2) && (ft_strchr(argv[1], ' '))))
+		if (((argc <= 3) && (ft_strchr(argv[2], ' '))))
 		{
-			temp = ft_strsplit(argv[1], ' ');
+			temp = ft_strsplit(argv[2], ' ');
 			i = 0;
 			while (temp[i] != NULL)
 				i++;
