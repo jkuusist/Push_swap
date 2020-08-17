@@ -28,7 +28,7 @@ static int	partition(int *arr, int start, int end)
 	pivot = arr[end];
 	i = start - 1;
 	j = start;
-	while (j <= (end -1))
+	while (j <= (end - 1))
 	{
 		if (arr[j] < pivot)
 		{
@@ -47,7 +47,7 @@ void		quicksort(int *arr, int start, int end)
 
 	if (start < end)
 	{
-		pivot =	partition(arr, start, end);
+		pivot = partition(arr, start, end);
 		quicksort(arr, start, (pivot - 1));
 		quicksort(arr, (pivot + 1), end);
 	}

@@ -24,35 +24,15 @@ void	checker_print(int argc, char **argv)
 
 	if (argc > 1)
 	{
-
 		if (((argc <= 2) && (ft_strchr(argv[1], ' '))))
 		{
-
-//		ft_printf("c1\n");
-//		ft_printf("argv[1] is: |%s|\n", argv[1]);
-
 			temp = ft_strsplit(argv[1], ' ');
-/*
-			i = 0;
-
-			while (i < 4)
-			{
-				ft_printf("temp[%d] is: |%s|\n", i, temp[i]);
-				i++;
-			}
-*/			
 			i = 0;
 			while (temp[i] != NULL)
-			{
-//				ft_printf("temp[%d] is: |%s|\n", i, temp[i]);
 				i++;
-			}
-
-//			ft_printf("i is %d\n", i);
-
 			a = create_stack(i);
 			b = create_stack(i);
-			if (!(convert_args(a, b, temp, (i /*+ 1*/))))
+			if (!(convert_args(a, b, temp, i)))
 			{
 				destroy_stack(a);
 				destroy_stack(b);
@@ -61,33 +41,22 @@ void	checker_print(int argc, char **argv)
 		}
 		else
 		{
-//			ft_printf("c2\n");
-//			ft_printf("argc - 1 is %d\n", argc - 1);
-
-			a = create_stack(argc - 1);	
-			b = create_stack(argc - 1);	
-
-//		ft_printf("argv[1] is: |%s|\n", argv[1]);
-		
-		if (!(convert_args(a, b, argv, argc)))
+			a = create_stack(argc - 1);
+			b = create_stack(argc - 1);
+			if (!(convert_args(a, b, argv, argc)))
 			{
 				destroy_stack(a);
 				destroy_stack(b);
 				return ;
 			}
-			
 		}
-
 		ret = 1;
 		while (ret != 0)
 		{
 			print_stacks(a, b);
-			
 			ret = get_next_line(0, &s);
 			if (ret == 1)
 			{
-//				ft_printf("chcker_print: s is |%s|\n", s);
-				
 				if (!ft_strcmp(s, "sa"))
 					swap_ab(a, 'a', 0);
 				else if (!ft_strcmp(s, "sb"))

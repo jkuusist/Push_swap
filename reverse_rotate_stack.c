@@ -15,8 +15,6 @@
 
 void	reverse_rotate_stack(t_stack *stack)
 {
-//	ft_printf("rev rot stack\n");
-
 	int btm_temp;
 	int i;
 
@@ -26,11 +24,9 @@ void	reverse_rotate_stack(t_stack *stack)
 		i = 0;
 		while (i <= stack->top)
 		{
-//			ft_printf("stack->top is %d. i is %d\n", stack->top, i);
 			stack->arr[i] = stack->arr[i + 1];
 			i++;
 		}
 		stack->arr[stack->top] = btm_temp;
-//		ft_printf("rev_rotate_PLACEHOLDER\n");
 	}
 }

@@ -19,7 +19,6 @@ void	print_stacks(t_stack *a, t_stack *b)
 
 	i = a->top;
 	ft_printf("TOP\n\n");
-
 	while (i >= 0)
 	{
 		if (i > b->top)

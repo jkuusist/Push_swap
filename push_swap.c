@@ -18,11 +18,11 @@ int	main(int argc, char **argv)
 	t_stack	*a;
 	t_stack	*b;
 	char	**temp;
-	int		i;	
+	int		i;
 
 	if (argc > 1)
 	{
-		if ((argc <= 2) && (ft_strchr(argv[1], ' '))) //OR 3 WITH -v
+		if ((argc <= 2) && (ft_strchr(argv[1], ' ')))
 		{
 			temp = ft_strsplit(argv[1], ' ');
 			i = 0;
@@ -31,7 +31,7 @@ int	main(int argc, char **argv)
 			argc = i;
 			a = create_stack(i);
 			b = create_stack(i);
-			if (!convert_args(a, b, temp, i))	
+			if (!convert_args(a, b, temp, i))
 			{
 				destroy_stack(a);
 				destroy_stack(b);
@@ -49,16 +49,8 @@ int	main(int argc, char **argv)
 				return (-1);
 			}
 		}
-/*
-		ft_printf("STACK_A:\n");
-		print_stack(a);
-		ft_printf("STACK_B:\n");
-		print_stack(b);
-		ft_printf("\n");
-*/
 		if (is_sorted(a))
 		{
-
 			destroy_stack(a);
 			destroy_stack(b);
 			return (0);
@@ -69,18 +61,6 @@ int	main(int argc, char **argv)
 			sort_small(a, b);
 		else
 			sort_stack(a, b);
-/*		
-		ft_printf("STACK_A:\n");
-		print_stack(a);
-		ft_printf("STACK_B:\n");
-		print_stack(b);
-		ft_printf("\n");
-
-		if (is_sorted(a))
-			ft_printf("FINE\n");
-		else
-			ft_printf("NOPE\n");
-*/		
 		destroy_stack(a);
 		destroy_stack(b);
 	}

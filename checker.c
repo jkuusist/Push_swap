@@ -12,22 +12,18 @@
 
 #include "includes/push_swap.h"
 #include "libft/libft.h"
+#include <stdlib.h>
 
 int		main(int argc, char **argv)
 {
 	char	*s;
 	char	**temp;
-	int 	ret;
+	int		ret;
 	t_stack *a;
 	t_stack *b;
 	int		i;
 
-/*	if (!ft_strcmp(argv[1], "-v"))
-	{
-		checker_print(argc, argv);
-		return (0);
-	}*/
-/*	else */ if (argc > 1)
+	if (argc > 1)
 	{
 		if (!ft_strcmp(argv[1], "-v"))
 		{
@@ -44,15 +40,26 @@ int		main(int argc, char **argv)
 			b = create_stack(i);
 			if (!(convert_args(a, b, temp, i)))
 			{
+				ft_printf("free2\n");
+				while (i >= 0)
+				{
+					free(temp);
+					i--;
+				}
 				destroy_stack(a);
 				destroy_stack(b);
 				return (-1);
 			}
+			while (i >= 0)
+			{
+				free(temp[i]);
+				i--;
+			}
 		}
 		else
 		{
-			a = create_stack(argc - 1);	
-			b = create_stack(argc - 1);	
+			a = create_stack(argc - 1);
+			b = create_stack(argc - 1);
 			if (!(convert_args(a, b, argv, argc)))
 			{
 				destroy_stack(a);
@@ -63,13 +70,6 @@ int		main(int argc, char **argv)
 		ret = 1;
 		while (ret != 0)
 		{
-/*
-			ft_printf("STACK A:\n");
-			print_stack(a);
-			ft_printf("STACK B:\n");
-			print_stack(b);
-			ft_printf("\n");
-*/
 			ret = get_next_line(0, &s);
 			if (ret == 1)
 			{

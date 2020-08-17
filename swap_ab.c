@@ -31,4 +31,3 @@ void	swap_ab(t_stack *stack, char id, int is_print)
 		}
 	}
 }
-

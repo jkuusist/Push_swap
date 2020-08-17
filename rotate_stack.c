@@ -15,12 +15,8 @@
 
 void	rotate_stack(t_stack *stack)
 {
-//	ft_printf("rot stack\n");
-
 	int top_temp;
 	int i;
-
-//	ft_printf("stack's top is %d\n", stack->arr[stack->top]);
 
 	if (stack->top > 0)
 	{
@@ -32,8 +28,5 @@ void	rotate_stack(t_stack *stack)
 			i--;
 		}
 		stack->arr[0] = top_temp;
-//		ft_printf("rotate_PLACEHOLDER\n");
-
-//		ft_printf("stack's top is %d\n", stack->arr[stack->top]);
 	}
 }

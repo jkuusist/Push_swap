@@ -28,4 +28,3 @@ void	rev_rotate_ab(t_stack *stack, char id, int is_print)
 			ft_printf("rrb\n");
 	}
 }
-

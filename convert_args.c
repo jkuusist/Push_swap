@@ -17,41 +17,35 @@
 int	convert_args(t_stack *stack_a, t_stack *stack_b, char **argv, int argc)
 {
 	int		i;
-		
-	i = argc - 1;
-		
-//		ft_printf("conv_arg's i is %d\n", i);
-//		ft_printf("argv[0] is |%s|\n", argv[0]);
 
-	while ((i >= 0) && (ft_strcmp(argv[i], "./checker")) && (ft_strcmp(argv[i], "./push_swap")) && (ft_strcmp(argv[i], "-v")))
+	i = argc - 1;
+	while ((i >= 0) && (ft_strcmp(argv[i], "./checker")) && (ft_strcmp(argv[i], "./push_swap"))
+		&& (ft_strcmp(argv[i], "-v")))
 	{
-//		ft_printf("argv[%d] is: |%s|\n", i, argv[i]);
-		
 		if (argv[i] && check_arg(argv[i]))
-		{
-//			ft_printf("1ca\n");
 			stack_push(stack_a, ft_atoi(argv[i]));
-		}
 		else if (!argv[i])
-		{
-//			ft_printf("2ca\n");
-			break;
-		}
+			break ;
 		else
 		{
-//			ft_printf("3ca\n");
+/*
 			ft_printf("Error\n");
 			destroy_stack(stack_a);
 			destroy_stack(stack_b);
+*/
+			handle_error(stack_a, stack_b);
 			return (0);
 		}
 		i--;
 	}
 	if (has_duplicate(stack_a))
 	{
+/*
 		ft_printf("Error\n");
 		destroy_stack(stack_a);
 		destroy_stack(stack_b);
+*/
+		handle_error(stack_a, stack_b);
 		return (0);
 	}
 	return (1);

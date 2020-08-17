@@ -13,7 +13,7 @@
 #include "includes/push_swap.h"
 #include <limits.h>
 
-int	stack_peek(t_stack* stack)
+int	stack_peek(t_stack *stack)
 {
 	if (stack->top == -1)
 		return (INT_MAX);
