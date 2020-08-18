@@ -10,13 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft/libft.h"
+
 static void	swap(int *a, int *b)
 {
 	int temp;
 
-	temp = *a;
-	*a = *b;
-	*b = temp;
+	if (a && b)
+	{
+		temp = *a;
+		*a = *b;
+		*b = temp;
+	}
 }
 
 static int	partition(int *arr, int start, int end)
@@ -25,10 +30,10 @@ static int	partition(int *arr, int start, int end)
 	int i;
 	int j;
 
-	pivot = arr[end];
+	pivot = arr[end - 1];
 	i = start - 1;
 	j = start;
-	while (j <= (end - 1))
+	while (j < end)
 	{
 		if (arr[j] < pivot)
 		{
@@ -37,7 +42,7 @@ static int	partition(int *arr, int start, int end)
 		}
 		j++;
 	}
-	swap(&(arr[i + 1]), &(arr[end]));
+	swap(&(arr[i + 1]), &(arr[end - 1]));
 	return (i + 1);
 }
 

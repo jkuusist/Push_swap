@@ -14,6 +14,8 @@
 #include <stdlib.h>
 #include <limits.h>
 
+#include "libft/libft.h"
+
 int	get_median(t_stack *stack)
 {
 	int *arr;
