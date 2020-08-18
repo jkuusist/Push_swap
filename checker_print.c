@@ -16,9 +16,9 @@
 
 void	checker_print(int argc, char **argv)
 {
-	char	*s;
+//	char	*s;
 	char	**temp;
-	int		ret;
+//	int		ret;
 	t_stack	*a;
 	t_stack	*b;
 	int		i;
@@ -64,6 +64,7 @@ void	checker_print(int argc, char **argv)
 				return ;
 			}
 		}
+/*
 		ret = 1;
 		while (ret != 0)
 		{
@@ -116,6 +117,8 @@ void	checker_print(int argc, char **argv)
 			ft_printf("OK\n");
 		else
 			ft_printf("KO\n");
+*/
+		handle_instructions(a, b, 1);
 		destroy_stack(a);
 		destroy_stack(b);
 	}
