@@ -48,9 +48,6 @@ void			sort_stack(t_stack *a, t_stack *b)
 	b->smallest = b->arr[get_smallest(b)];
 	b->largest = b->arr[get_largest(b)];
 	move_doer(a, b);
-
-//	ft_printf("b->top is %d\nb_smallest_i is %d\nb_largest_i is %d\n", b->top, get_smallest(b), get_largest(b));
-
 	if (b->top != -1)
 	{
 		b->smallest = b->arr[get_smallest(b)];
