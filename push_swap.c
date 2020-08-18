@@ -32,20 +32,8 @@ static	void	check_and_sort(t_stack *a, t_stack *b, int argc)
 	destroy_stack(b);
 }
 
-static	void	handle_arg(int *argc, char **argv)
+static	void	arg_helper(t_stack *a, t_stack *b, char **temp, int i)
 {
-	char	**temp;
-	int		i;
-	t_stack *a;
-	t_stack *b;
-	
-	temp = ft_strsplit(argv[1], ' ');
-	i = 0;
-	while (temp[i] != NULL)
-		i++;
-	*argc = i;
-	a = create_stack(i);
-	b = create_stack(i);
 	if (!convert_args(a, b, temp, i))
 	{
 		while (i >= 0)
@@ -62,10 +50,27 @@ static	void	handle_arg(int *argc, char **argv)
 		i--;
 	}
 	free(temp);
+}
+
+static	void	handle_arg(int *argc, char **argv)
+{
+	char	**temp;
+	int		i;
+	t_stack *a;
+	t_stack *b;
+
+	temp = ft_strsplit(argv[1], ' ');
+	i = 0;
+	while (temp[i] != NULL)
+		i++;
+	*argc = i;
+	a = create_stack(i);
+	b = create_stack(i);
+	arg_helper(a, b, temp, i);
 	check_and_sort(a, b, *argc);
 }
 
-int	main(int argc, char **argv)
+int				main(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
