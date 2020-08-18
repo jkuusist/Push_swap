@@ -34,22 +34,22 @@ static void	convert_split(char **temp, t_stack *a, t_stack *b, int i)
 	free(temp);
 }
 
-void		checker_arg(int argc, char** argv)
+void		checker_arg(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
 	char	**temp;
-	int 	ret; //CHANGE NAME
+	int		i;
 
 	if (((argc <= 2) && (ft_strchr(argv[1], ' '))))
 	{
 		temp = ft_strsplit(argv[1], ' ');
-		ret = 0;
-		while (temp[ret] != NULL)
-			ret++;
-		a = create_stack(ret);
-		b = create_stack(ret);
-		convert_split(temp, a, b, ret);
+		i = 0;
+		while (temp[i] != NULL)
+			i++;
+		a = create_stack(i);
+		b = create_stack(i);
+		convert_split(temp, a, b, i);
 	}
 	else
 	{

@@ -14,11 +14,29 @@
 #include "libft/libft.h"
 #include <stdlib.h>
 
+static	void	convert_split(char **temp, t_stack *a, t_stack *b, int i)
+{
+	if (!(convert_args(a, b, temp, i)))
+	{
+		while (i >= 0)
+		{
+			free(temp[i]);
+			i--;
+		}
+		free(temp);
+		return ;
+	}
+	while (i >= 0)
+	{
+		free(temp[i]);
+		i--;
+	}
+	free(temp);
+}
+
 void	checker_print(int argc, char **argv)
 {
-//	char	*s;
 	char	**temp;
-//	int		ret;
 	t_stack	*a;
 	t_stack	*b;
 	int		i;
@@ -33,91 +51,15 @@ void	checker_print(int argc, char **argv)
 				i++;
 			a = create_stack(i);
 			b = create_stack(i);
-			if (!(convert_args(a, b, temp, i)))
-			{
-				while (i >= 0)
-				{
-					free(temp[i]);
-					i--;
-				}
-				free(temp);
-
-//				destroy_stack(a);
-//				destroy_stack(b);
-				return ;
-			}
-			while (i >= 0)
-			{
-				free(temp[i]);
-				i--;
-			}
-			free(temp);
+			convert_split(temp, a, b, i);
 		}
 		else
 		{
 			a = create_stack(argc - 1);
 			b = create_stack(argc - 1);
 			if (!(convert_args(a, b, argv, argc)))
-			{
-//				destroy_stack(a);
-//				destroy_stack(b);
 				return ;
-			}
 		}
-/*
-		ret = 1;
-		while (ret != 0)
-		{
-			print_stacks(a, b);
-			ret = get_next_line(0, &s);
-			if (ret == 1)
-			{
-				if (!ft_strcmp(s, "sa"))
-					swap_ab(a, 'a', 0);
-				else if (!ft_strcmp(s, "sb"))
-					swap_ab(b, 'b', 0);
-				else if (!ft_strcmp(s, "ss"))
-				{
-					swap_ab(a, 'a', 0);
-					swap_ab(b, 'b', 0);
-				}
-				else if (!ft_strcmp(s, "pa"))
-					push_ab(a, b, 'a', 0);
-				else if (!ft_strcmp(s, "pb"))
-					push_ab(a, b, 'b', 0);
-				else if (!ft_strcmp(s, "ra"))
-					rotate_ab(a, 'a', 0);
-				else if (!ft_strcmp(s, "rb"))
-					rotate_ab(b, 'b', 0);
-				else if (!ft_strcmp(s, "rr"))
-				{
-					rotate_ab(a, 'a', 0);
-					rotate_ab(b, 'b', 0);
-				}
-				else if (!ft_strcmp(s, "rra"))
-					rev_rotate_ab(a, 'a', 0);
-				else if (!ft_strcmp(s, "rrb"))
-					rev_rotate_ab(b, 'b', 0);
-				else if (!ft_strcmp(s, "rrr"))
-				{
-					rev_rotate_ab(a, 'a', 0);
-					rev_rotate_ab(b, 'b', 0);
-				}
-				else
-				{
-					ft_printf("Error\n");
-					destroy_stack(a);
-					destroy_stack(b);
-					return ;
-				}
-			}
-			free(s);
-		}
-		if ((b->top == -1) && is_sorted(a))
-			ft_printf("OK\n");
-		else
-			ft_printf("KO\n");
-*/
 		handle_instructions(a, b, 1);
 		destroy_stack(a);
 		destroy_stack(b);

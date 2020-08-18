@@ -14,7 +14,15 @@
 #include "libft/libft.h"
 #include <stdlib.h>
 
-void handle_instructions(t_stack *a, t_stack *b, int is_print)
+static	void	check_ok(t_stack *a, t_stack *b)
+{
+	if ((b->top == -1) && is_sorted(a))
+		ft_printf("OK\n");
+	else
+		ft_printf("KO\n");
+}
+
+void			handle_instructions(t_stack *a, t_stack *b, int is_print)
 {
 	int		ret;
 	char	*s;
@@ -38,8 +46,5 @@ void handle_instructions(t_stack *a, t_stack *b, int is_print)
 			free(s);
 		}
 	}
-	if ((b->top == -1) && is_sorted(a))
-		ft_printf("OK\n");
-	else
-		ft_printf("KO\n");
+	check_ok(a, b);
 }
