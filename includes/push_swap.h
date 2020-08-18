@@ -59,10 +59,10 @@ void			sort_large(t_stack *a, t_stack *b);
 void			get_quarts(t_stack *stack);
 void			checker_print(int argc, char **argv);
 void			print_stacks(t_stack *a, t_stack *b);
-void			handle_error(t_stack* a, t_stack *b);
+void			handle_error(t_stack *a, t_stack *b);
 int				check_input(char *s);
 void			handle_input(char *s, t_stack *a, t_stack *b);
 void			handle_instructions(t_stack *a, t_stack *b, int is_print);
-void			checker_arg(int argc, char** argv);
+void			checker_arg(int argc, char **argv);
 
 #endif
