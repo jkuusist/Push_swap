@@ -40,7 +40,7 @@ void			handle_instructions(t_stack *a, t_stack *b, int is_print)
 			else
 			{
 				free(s);
-				handle_error(a, b);
+				ft_printf("Error\n");
 				return ;
 			}
 			free(s);
