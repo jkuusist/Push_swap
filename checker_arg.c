@@ -56,7 +56,7 @@ void		checker_arg(int argc, char **argv)
 		a = create_stack(argc - 1);
 		b = create_stack(argc - 1);
 		if (!(convert_args(a, b, argv, argc)))
-			return ; //MAY LEAK, CHECK BEFORE TURN-IN
+			return ;
 	}
 	handle_instructions(a, b, 0);
 	destroy_stack(a);
