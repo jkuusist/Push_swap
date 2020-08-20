@@ -53,7 +53,7 @@ void		quicksort(int *arr, int start, int end)
 	if (start < end)
 	{
 		pivot = partition(arr, start, end);
-		quicksort(arr, start, (pivot - 1));
+		quicksort(arr, start, (pivot));
 		quicksort(arr, (pivot + 1), end);
 	}
 }
