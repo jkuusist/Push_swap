@@ -15,16 +15,19 @@
 
 void	rev_rotate_ab(t_stack *stack, char id, int is_print)
 {
-	if (id == 'a')
+	if (stack->top > 0)
 	{
-		reverse_rotate_stack(stack);
-		if (is_print)
-			ft_printf("rra\n");
-	}
-	else if (id == 'b')
-	{
-		reverse_rotate_stack(stack);
-		if (is_print)
-			ft_printf("rrb\n");
+		if (id == 'a')
+		{
+			reverse_rotate_stack(stack);
+			if (is_print)
+				ft_printf("rra\n");
+		}
+		else if (id == 'b')
+		{
+			reverse_rotate_stack(stack);
+			if (is_print)
+				ft_printf("rrb\n");
+		}
 	}
 }
