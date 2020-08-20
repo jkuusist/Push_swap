@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/20 12:05:00 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/08/20 12:05:00 by jkuusist         ###   ########.fr       */
+/*   Created: 2020/08/20 12:42:00 by jkuusist          #+#    #+#             */
+/*   Updated: 2020/08/20 12:42:00 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	sort_very_large(t_stack *a, t_stack *b)
 	int i;
 
 	i = 0;
-	sl_upper(t_stack *a, t_stack *b);
-	sl_lower(t_stack *a, t_stack *b);
+	sl_upper(a, b);
+	sl_lower(a, b);
 	while (i < (int)a->size)
 	{
 		if (stack_peek(a) < a->first_dec)

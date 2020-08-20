@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_quints.c                                       :+:      :+:    :+:   */
+/*   get_decs.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/20 12:45:00 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/08/20 12:45:00 by jkuusist         ###   ########.fr       */
+/*   Created: 2020/08/20 12:58:00 by jkuusist          #+#    #+#             */
+/*   Updated: 2020/08/20 11:59:00 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "libft/libft.h"
 
-void	get_quints(t_stack *stack)
+void	get_decs(t_stack *stack)
 {
 	int *arr;
 	int i;
@@ -30,18 +30,17 @@ void	get_quints(t_stack *stack)
 	}
 	quicksort(arr, 0, stack->size);
 
-//	for (int j = 0; j < (int)stack->size; j++)
-//		ft_printf("arr[%d] is %d\n", j, arr[j]);
-
-
-	stack->first_quint = arr[stack->size / 5 - 1];
-	stack->second_quint = arr[(stack->size / 5) * 2 - 1];
-	stack->third_quint = arr[(stack->size / 5) * 3 - 1];
-	stack->fourth_quint = arr[(stack->size / 5) * 4 - 1];
-
-//	ft_printf("stack->size / 5 is %d\n", (stack->size / 5));
-
-//	ft_printf("first quint is %d\nsecond quint is %d\nthird quint is %d\nfourth quint is %d\n", stack->first_quint, stack->second_quint, stack->third_quint, stack->fourth_quint);
+	stack->first_dec = arr[stack->size / 10 - 1];
+	stack->second_dec = arr[(stack->size / 10 * 2) - 1];
+	stack->third_dec = arr[(stack->size / 10 * 3) - 1];
+	stack->fourth_dec = arr[(stack->size / 10 * 4) - 1];
+	stack->fifth_dec = arr[(stack->size / 10 * 5) - 1];
+	stack->sixth_dec = arr[(stack->size / 10 * 6) - 1];
+	stack->seventh_dec = arr[(stack->size / 10 * 7) - 1];
+	stack->eighth_dec = arr[(stack->size / 10 * 8) - 1];
+	stack->ninth_dec = arr[(stack->size / 10 * 9) - 1];
+	
+	ft_printf("first_dec is %d\nfifth_dec is %d\nninth_dec is %d\n", stack->first_dec, stack->fifth_dec, stack->ninth_dec);
 
 	free(arr);
 }

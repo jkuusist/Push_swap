@@ -32,7 +32,7 @@ typedef struct	s_stack
 	int				fifth_dec;
 	int				sixth_dec;
 	int				seventh_dec;
-	int				eight_dec;
+	int				eighth_dec;
 	int				ninth_dec;
 	int				small_rot;
 	int				small_rrot;
@@ -74,5 +74,9 @@ int				check_input(char *s);
 void			handle_input(char *s, t_stack *a, t_stack *b);
 void			handle_instructions(t_stack *a, t_stack *b, int is_print);
 void			checker_arg(int argc, char **argv);
+void			sort_very_large(t_stack *a, t_stack *b);
+void			sl_upper(t_stack *a, t_stack *b);
+void			sl_lower(t_stack *a, t_stack *b);
+void			get_decs(t_stack *stack);
 
 #endif

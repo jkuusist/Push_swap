@@ -1,12 +1,22 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sl_upper.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/20 12:45:00 by jkuusist          #+#    #+#             */
+/*   Updated: 2020/08/20 12:45:00 by jkuusist         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "includes/push_swap.h"
 #include "libft/libft.h"
 
 static	void	push_or_rot(t_stack *a, t_stack *b)
 {
-	if ((stack_peek(a) < a->seventh_quint)
-			&& (stack_peek(a) >= a->sixth_quint))
+	if ((stack_peek(a) < a->seventh_dec)
+			&& (stack_peek(a) >= a->sixth_dec))
 		push_ab(a, b, 'b', 1);
 	else
 		rotate_ab(a, 'a', 1);
@@ -30,7 +40,7 @@ static	void	do_first_two(t_stack *a, t_stack *b, int i)
 	i = 0;
 	while (i < (int)a->size)
 	{
-		if ((stack_peek(a) < a->eigth_dec)
+		if ((stack_peek(a) < a->eighth_dec)
 			&& (stack_peek(a) >= a->seventh_dec))
 			push_ab(a, b, 'b', 1);
 		else
@@ -58,7 +68,7 @@ static	void	do_next_two(t_stack *a, t_stack *b, int i)
 	i = 0;
 	while (i < (int)a->size)
 	{
-		if ((stack_peek(a) < a->sixth_dec) && (stack_peek(a) >= fifth_dec))
+		if ((stack_peek(a) < a->sixth_dec) && (stack_peek(a) >= a->fifth_dec))
 			push_ab(a, b, 'b', 1);
 		else
 			rotate_ab(a, 'a', 1);

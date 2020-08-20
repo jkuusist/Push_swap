@@ -22,10 +22,10 @@ static	void	check_and_sort(t_stack *a, t_stack *b, int argc)
 		destroy_stack(b);
 		return ;
 	}
-/*	if (argc >= 500)
-		sort_large(a, b);
+	if (argc >= 500)
+		sort_very_large(a, b);
 	else 
-*/
+
 	if (argc <= 6)
 		sort_small(a, b);
 	else
