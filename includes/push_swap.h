@@ -25,6 +25,15 @@ typedef struct	s_stack
 	int				second_quint;
 	int				third_quint;
 	int				fourth_quint;
+	int				first_dec;
+	int				second_dec;
+	int				third_dec;
+	int				fourth_dec;
+	int				fifth_dec;
+	int				sixth_dec;
+	int				seventh_dec;
+	int				eight_dec;
+	int				ninth_dec;
 	int				small_rot;
 	int				small_rrot;
 	int				large_rot;
