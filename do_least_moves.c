@@ -19,6 +19,9 @@ void		do_least_moves(t_stack *a, t_stack *b)
 	int largest_i;
 
 	largest_i = get_largest(b);
+
+//	ft_printf("b->top is %d. largest i is %d\n", b->top, largest_i);
+
 	if ((b->top - largest_i) < (largest_i + 1))
 	{
 		while (b->arr[b->top] != b->largest)

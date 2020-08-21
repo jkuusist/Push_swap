@@ -30,6 +30,10 @@ static	void	check_and_sort(t_stack *a, t_stack *b, int argc)
 		sort_small(a, b);
 	else
 		sort_large(a, b);
+
+//	print_stack(a);
+
+
 	destroy_stack(a);
 	destroy_stack(b);
 }

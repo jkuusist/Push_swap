@@ -78,5 +78,6 @@ void			sort_very_large(t_stack *a, t_stack *b);
 void			sl_upper(t_stack *a, t_stack *b);
 void			sl_lower(t_stack *a, t_stack *b);
 void			get_decs(t_stack *stack);
+void			push_between(t_stack *a, t_stack *b, int lower, int higher);
 
 #endif
