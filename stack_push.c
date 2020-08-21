@@ -17,6 +17,8 @@ void	stack_push(t_stack *stack, int num)
 {
 	if (stack->top < (int)(stack->size - 1))
 	{
+//		ft_printf("stack->top is %d. stack->size - 1 is %d\n", stack->top, (stack->size - 1));
+
 		stack->top++;
 		stack->arr[stack->top] = num;
 	}

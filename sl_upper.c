@@ -52,7 +52,9 @@ static	void	do_first_two(t_stack *a, t_stack *b, int i)
 static	void	do_next_two(t_stack *a, t_stack *b, int i)
 {
 	while (b->top > 0)
+	{
 		do_least_moves(a, b);
+	}
 	push_ab(a, b, 'a', 1);
 	i = 0;
 	while (i < (int)a->size)
@@ -93,31 +95,21 @@ void			sl_upper(t_stack *a, t_stack *b)
 	b->smallest = b->arr[get_smallest(b)];
 	b->largest = b->arr[get_largest(b)];
 	while (b->top > 0)
+	{
 		do_least_moves(a, b);
+	}
 	push_ab(a, b, 'a', 1);
 	i = 0;
 	do_first_two(a, b, i);
-	b->smallest = b->arr[get_smallest(b)];
 	b->largest = b->arr[get_largest(b)];
-	i = 0;
+//	i = 0;
 	do_next_two(a, b, i);
 	b->smallest = b->arr[get_smallest(b)];
 	b->largest = b->arr[get_largest(b)];
 	while (b->top > 0)
-		do_least_moves(a, b);
-	push_ab(a, b, 'a', 1);
-/*
-	i = 0;
-	while (i < (int)a->size)
 	{
-		if ((stack_peek(a) < a->sixth_dec) && (stack_peek(a) >= fifth_dec))
-			push_ab(a, b, 'b', 1);
-		else
-			rotate_ab(a, 'a', 1);
-		i++;
-	}
-	while (b->top > 0)
+
 		do_least_moves(a, b);
+	}
 	push_ab(a, b, 'a', 1);
-*/
 }

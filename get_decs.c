@@ -40,7 +40,7 @@ void	get_decs(t_stack *stack)
 	stack->eighth_dec = arr[(stack->size / 10 * 8) - 1];
 	stack->ninth_dec = arr[(stack->size / 10 * 9) - 1];
 	
-	ft_printf("first_dec is %d\nfifth_dec is %d\nninth_dec is %d\n", stack->first_dec, stack->fifth_dec, stack->ninth_dec);
+//	ft_printf("first_dec is %d\nfifth_dec is %d\nninth_dec is %d\n", stack->first_dec, stack->fifth_dec, stack->ninth_dec);
 
 	free(arr);
 }
