@@ -37,6 +37,7 @@ static	void	do_next_two(t_stack *a, t_stack *b)
 		do_least_moves(a, b);
 	push_ab(a, b, 'a', 1);
 	push_between(a, b, a->first_quint, INT_MIN);
+//	push_between(a, b, INT_MIN, a->first_quint);
 }
 
 void			sort_large(t_stack *a, t_stack *b)
