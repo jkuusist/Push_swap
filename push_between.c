@@ -22,15 +22,9 @@ void	push_between(t_stack *a, t_stack *b, int lower, int higher)
 	while (i < (int)a->size)
 	{
 		if ((stack_peek(a) < higher) && (stack_peek(a) >= lower))
-		{	
-//			ft_printf("in pbet's if");		
 			push_ab(a, b, 'b', 1);
-		}
 		else
-		{
-//			ft_printf("in pbet's else");
 			rotate_ab(a, 'a', 1);
-		}
 		i++;
 	}
 }

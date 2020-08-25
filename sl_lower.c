@@ -13,81 +13,32 @@
 #include "includes/push_swap.h"
 #include "libft/libft.h"
 
-static	void	push_or_rot(t_stack *a, t_stack *b)
+static	void	do_next_two(t_stack *a, t_stack *b)
 {
-	if ((stack_peek(a) < a->third_dec)
-			&& (stack_peek(a) >= a->second_dec))
-		push_ab(a, b, 'b', 1);
-	else
-		rotate_ab(a, 'a', 1);
-}
-
-static	void	do_first_two(t_stack *a, t_stack *b, int i)
-{
-	while (i < (int)a->size)
-	{
-		if ((stack_peek(a) < a->fifth_dec) && (stack_peek(a) >= a->fourth_dec))
-			push_ab(a, b, 'b', 1);
-		else
-			rotate_ab(a, 'a', 1);
-		i++;
-	}
-	b->smallest = b->arr[get_smallest(b)];
+	while (b->top > 0)
+		do_least_moves(a, b);
+	push_ab(a, b, 'a', 1);
+	push_between(a, b, a->second_dec, a->third_dec);
 	b->largest = b->arr[get_largest(b)];
 	while (b->top > 0)
 		do_least_moves(a, b);
 	push_ab(a, b, 'a', 1);
-	i = 0;
-	while (i < (int)a->size)
-	{
-		if ((stack_peek(a) < a->fourth_dec)
-			&& (stack_peek(a) >= a->third_dec))
-			push_ab(a, b, 'b', 1);
-		else
-			rotate_ab(a, 'a', 1);
-		i++;
-	}
-}
-
-static	void	do_next_two(t_stack *a, t_stack *b, int i)
-{
-	while (b->top > 0)
-		do_least_moves(a, b);
-	push_ab(a, b, 'a', 1);
-	i = 0;
-	while (i < (int)a->size)
-	{
-		push_or_rot(a, b);
-		i++;
-	}
-	b->smallest = b->arr[get_smallest(b)];
-	b->largest = b->arr[get_largest(b)];
-	while (b->top > 0)
-		do_least_moves(a, b);
-	push_ab(a, b, 'a', 1);
-	i = 0;
-	while (i < (int)a->size)
-	{
-		if ((stack_peek(a) < a->second_dec) && (stack_peek(a) >= a->first_dec))
-			push_ab(a, b, 'b', 1);
-		else
-			rotate_ab(a, 'a', 1);
-		i++;
-	}
+	push_between(a, b, a->first_dec, a->second_dec);
 }
 
 void			sl_lower(t_stack *a, t_stack *b)
 {
-	int i;
-
-
-	i = 0;
 	get_decs(a);
-	do_first_two(a, b, i);
+	push_between(a, b, a->fourth_dec, a->fifth_dec);
+	b->largest = b->arr[get_largest(b)];
+	while (b->top > 0)
+		do_least_moves(a, b);
+	push_ab(a, b, 'a', 1);
+	push_between(a, b, a->third_dec, a->fourth_dec);
+
 	b->smallest = b->arr[get_smallest(b)];
 	b->largest = b->arr[get_largest(b)];
-	i = 0;
-	do_next_two(a, b, i);
+	do_next_two(a, b);
 	b->smallest = b->arr[get_smallest(b)];
 	b->largest = b->arr[get_largest(b)];
 	while (b->top > 0)
