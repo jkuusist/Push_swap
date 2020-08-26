@@ -79,5 +79,6 @@ void			sl_upper(t_stack *a, t_stack *b);
 void			sl_lower(t_stack *a, t_stack *b);
 void			get_decs(t_stack *stack);
 void			push_between(t_stack *a, t_stack *b, int lower, int higher);
+int				is_in_stack(t_stack *stack, int lower, int higher);
 
 #endif
