@@ -28,6 +28,8 @@ static	void	check_and_sort(t_stack *a, t_stack *b, int argc)
 
 	if (argc <= 6)
 		sort_small(a, b);
+	else if (argc <= 50)
+		sort_stack(a, b);
 	else
 		sort_large(a, b);
 

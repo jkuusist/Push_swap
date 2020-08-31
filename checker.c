@@ -17,6 +17,8 @@ int			main(int argc, char **argv)
 {
 	if (argc > 1)
 	{
+//		ft_printf("ARG is: %s\n", argv[1]);
+
 		if (!ft_strcmp(argv[1], "-v"))
 		{
 			checker_print(argc, argv);
