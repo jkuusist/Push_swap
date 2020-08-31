@@ -12,6 +12,8 @@
 
 #include "includes/push_swap.h"
 
+#include "libft/libft.h"
+
 int		is_in_stack(t_stack *stack, int lower, int higher)
 {
 	int i;
@@ -19,8 +21,11 @@ int		is_in_stack(t_stack *stack, int lower, int higher)
 
 	i = 0;
 	ret = 0;
-	while (i < (int)stack->size)
+//	while (i < (int)stack->size)
+	while (i <= stack->top)
 	{
+//		ft_printf("lower is %d. higher is %d. arr[%d] is %d\n", lower, higher, i, stack->arr[i]);
+
 		if ((stack->arr[i] >= lower) && (stack->arr[i] < higher))
 			ret = 1;
 		i++;
