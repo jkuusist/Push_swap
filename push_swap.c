@@ -24,9 +24,7 @@ static	void	check_and_sort(t_stack *a, t_stack *b, int argc)
 	}
 	if (argc >= 500)
 		sort_very_large(a, b);
-	else 
-
-	if (argc <= 6)
+	else if (argc <= 6)
 		sort_small(a, b);
 	else if (argc <= 50)
 		sort_stack(a, b);
