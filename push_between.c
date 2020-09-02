@@ -25,6 +25,8 @@ void	push_between(t_stack *a, t_stack *b, int lower, int higher)
 	i = 0;	
 	while (is_in_stack(a, lower, higher))
 	{
+//		ft_printf("went into pb's while. a->top is now %d\n", a->top);
+
 		j = a->top;
 		first_i = -1;
 		second_i = -1;
@@ -49,20 +51,37 @@ void	push_between(t_stack *a, t_stack *b, int lower, int higher)
 			}
 			j++;
 		}
+
+//		ft_printf("first is %d. second is %d\n", a->arr[first_i], a->arr[second_i]);
+
 		if ((second_i != -1) && ((second_i + 1) < (a->top - first_i)))
 		{
 			while (!((stack_peek(a) < higher ) && (stack_peek(a) >= lower)))
 				rev_rotate_ab(a, 'a', 1);
+
+//			ft_printf("a top is %d. pushing to b\n", a->arr[a->top]);
+
 			push_ab(a, b, 'b', 1);
 		}
 		else
 		{
 			while (!((stack_peek(a) < higher ) && (stack_peek(a) >= lower)))
 				rotate_ab(a, 'a', 1);
+
+//			ft_printf("a top is %d. pushing to b\n", a->arr[a->top]);
+
 			push_ab(a, b, 'b', 1);
 		}
 		i++;
 	}
+/*
+	if (lower == INT_MIN)
+	{
+	ft_printf("exiting push_between. stack a is now:\n");
+	print_stack(a);
+	ft_printf("\n");
+	}
+*/
 }
 
 /*

@@ -27,7 +27,10 @@ int		is_in_stack(t_stack *stack, int lower, int higher)
 //		ft_printf("lower is %d. higher is %d. arr[%d] is %d\n", lower, higher, i, stack->arr[i]);
 
 		if ((stack->arr[i] >= lower) && (stack->arr[i] < higher))
+		{
+//			ft_printf("in iis. found %d\n", stack->arr[i]);
 			ret = 1;
+		}
 		i++;
 	}
 	return (ret);
