@@ -21,16 +21,10 @@ int		is_in_stack(t_stack *stack, int lower, int higher)
 
 	i = 0;
 	ret = 0;
-//	while (i < (int)stack->size)
 	while (i <= stack->top)
 	{
-//		ft_printf("lower is %d. higher is %d. arr[%d] is %d\n", lower, higher, i, stack->arr[i]);
-
 		if ((stack->arr[i] >= lower) && (stack->arr[i] < higher))
-		{
-//			ft_printf("in iis. found %d\n", stack->arr[i]);
 			ret = 1;
-		}
 		i++;
 	}
 	return (ret);

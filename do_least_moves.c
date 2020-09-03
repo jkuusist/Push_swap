@@ -19,9 +19,6 @@ void		do_least_moves(t_stack *a, t_stack *b)
 	int largest_i;
 
 	largest_i = get_largest(b);
-
-//	ft_printf("b->top is %d. largest i is %d\n", b->top, largest_i);
-
 	if ((b->top - largest_i) < (largest_i + 1))
 	{
 		while (b->arr[b->top] != b->largest)
@@ -36,10 +33,6 @@ void		do_least_moves(t_stack *a, t_stack *b)
 			rev_rotate_ab(b, 'b', 1);
 		}
 	}
-
-//	ft_printf("b->top is %d. pushing to a\n", stack_peek(b));
-
 	push_ab(a, b, 'a', 1);
 	b->largest = b->arr[get_largest(b)];
-//	b->smallest = b->arr[get_smallest(b)];
 }

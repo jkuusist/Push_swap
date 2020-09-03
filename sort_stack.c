@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
-#include "libft/libft.h"
 
 static	void	move_doer(t_stack *a, t_stack *b)
 {
@@ -45,14 +44,10 @@ void			sort_stack(t_stack *a, t_stack *b)
 			rotate_ab(a, 'a', 1);
 		i++;
 	}
-//	b->smallest = b->arr[get_smallest(b)];
 	b->largest = b->arr[get_largest(b)];
 	move_doer(a, b);
 	if (b->top != -1)
-	{
-//		b->smallest = b->arr[get_smallest(b)];
 		b->largest = b->arr[get_largest(b)];
-	}
 	while (b->top > 0)
 		do_least_moves(a, b);
 	push_ab(a, b, 'a', 1);

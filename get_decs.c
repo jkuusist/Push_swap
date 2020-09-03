@@ -29,7 +29,6 @@ void	get_decs(t_stack *stack)
 		i++;
 	}
 	quicksort(arr, 0, stack->size);
-
 	stack->first_dec = arr[stack->size / 10 - 1];
 	stack->second_dec = arr[(stack->size / 10 * 2) - 1];
 	stack->third_dec = arr[(stack->size / 10 * 3) - 1];
@@ -39,8 +38,5 @@ void	get_decs(t_stack *stack)
 	stack->seventh_dec = arr[(stack->size / 10 * 7) - 1];
 	stack->eighth_dec = arr[(stack->size / 10 * 8) - 1];
 	stack->ninth_dec = arr[(stack->size / 10 * 9) - 1];
-	
-//	ft_printf("first_dec is %d\nfifth_dec is %d\nninth_dec is %d\n", stack->first_dec, stack->fifth_dec, stack->ninth_dec);
-
 	free(arr);
 }
