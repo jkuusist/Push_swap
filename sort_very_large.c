@@ -18,16 +18,16 @@ void	sort_very_large(t_stack *a, t_stack *b)
 {
 	sl_upper(a, b);
 	sl_lower(a, b);
+
+
 	push_between(a, b, INT_MIN, a->first_dec);
-	while (a->top >= 0)
-		push_ab(a, b, 'b', 1);
+
+//	ft_printf("stack a:\n");
+//	print_stack(a);
+
+//	while (a->top >= 0)
+//		push_ab(a, b, 'b', 1);
 	b->largest = b->arr[get_largest(b)];
-/*
-	ft_printf("stack a:\n");
-	print_stack(a);
-	ft_printf("stack b:\n");
-	print_stack(b);
-*/
 	while (b->top > 0)
 		do_least_moves(a, b);
 	push_ab(a, b, 'a', 1);
