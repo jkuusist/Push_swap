@@ -41,5 +41,5 @@ void		do_least_moves(t_stack *a, t_stack *b)
 
 	push_ab(a, b, 'a', 1);
 	b->largest = b->arr[get_largest(b)];
-	b->smallest = b->arr[get_smallest(b)];
+//	b->smallest = b->arr[get_smallest(b)];
 }

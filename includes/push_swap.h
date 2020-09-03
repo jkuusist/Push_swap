@@ -18,7 +18,6 @@ typedef struct	s_stack
 	unsigned int	size;
 	int				top;
 	int				*arr;
-	int				smallest;
 	int				largest;
 	int				median;
 	int				first_quint;
@@ -75,8 +74,6 @@ void			handle_input(char *s, t_stack *a, t_stack *b);
 void			handle_instructions(t_stack *a, t_stack *b, int is_print);
 void			checker_arg(int argc, char **argv);
 void			sort_very_large(t_stack *a, t_stack *b);
-void			sl_upper(t_stack *a, t_stack *b);
-void			sl_lower(t_stack *a, t_stack *b);
 void			get_decs(t_stack *stack);
 void			push_between(t_stack *a, t_stack *b, int lower, int higher);
 int				is_in_stack(t_stack *stack, int lower, int higher);

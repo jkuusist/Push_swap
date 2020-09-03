@@ -45,12 +45,12 @@ void			sort_stack(t_stack *a, t_stack *b)
 			rotate_ab(a, 'a', 1);
 		i++;
 	}
-	b->smallest = b->arr[get_smallest(b)];
+//	b->smallest = b->arr[get_smallest(b)];
 	b->largest = b->arr[get_largest(b)];
 	move_doer(a, b);
 	if (b->top != -1)
 	{
-		b->smallest = b->arr[get_smallest(b)];
+//		b->smallest = b->arr[get_smallest(b)];
 		b->largest = b->arr[get_largest(b)];
 	}
 	while (b->top > 0)
