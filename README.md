@@ -24,10 +24,10 @@ rrr - rra and rrb at the same time
 
 Usage: 'make' to create the executables
 
-./checker 2 1 3
-sa
-rra
-pb
+./checker 2 1 3\
+sa\
+rra\
+pb\
 Ctrl+D to tell the program you're done giving instructions
 
 -----
