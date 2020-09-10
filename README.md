@@ -19,7 +19,7 @@ rb - Rotates stack B so that the top element goes to the bottom and all the rest
 rr - ra and rb at the same time\
 rra - Rotates stack A so that the bottom element goes to the top and all the rest shift down by 1\
 rrb - Rotates stack B so that the bottom element goes to the top and all the rest shift down by 1\
-rrr - rra and rrb at the same time\
+rrr - rra and rrb at the same time
 
 
 Usage: 'make' to create the executables
