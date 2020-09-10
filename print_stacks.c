@@ -17,15 +17,20 @@ void	print_stacks(t_stack *a, t_stack *b)
 {
 	int i;
 
-	i = a->top;
-	ft_printf("TOP\n\n");
+	if (a->top >= b->top)
+		i = a->top;
+	else
+		i = b->top;
+	ft_printf("\nTOP\n\n");
 	while (i >= 0)
 	{
 		if (i > b->top)
 			ft_printf("%d\n", a->arr[i]);
+		else if (i > a->top)
+			ft_printf("%-13s %d\n", " ", b->arr[i]);
 		else
-			ft_printf("%d  %d\n", a->arr[i], b->arr[i]);
+			ft_printf("%-13d %d\n", a->arr[i], b->arr[i]);
 		i--;
 	}
-	ft_printf("A  B\n");
+	ft_printf("%-13s STACK B\n", "STACK A");
 }
