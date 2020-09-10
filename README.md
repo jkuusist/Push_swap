@@ -8,18 +8,18 @@ than INT_MIN, nonexistent instructions or improper formatting.
 
 You can also pipe the output of push_swap into checker to check if the solution push_swap came up with actually sorts the given numbers.
 
-The allowed operations are:
-sa - Swaps the top 2 elements of stack A
-sb - Swap the top 2 elements of stack B
-ss - sa and sb at the same time
-pa - Pushes the top element of stack B to the top of stack A
-pb - Pushes the top element of stack A to the top of stack B
-ra - Rotates stack A so that the top element goes to the bottom and all the rest shift up by 1
-rb - Rotates stack B so that the top element goes to the bottom and all the rest shift up by 1
-rr - ra and rb at the same time
-rra - Rotates stack A so that the bottom element goes to the top and all the rest shift down by 1
-rrb - Rotates stack B so that the bottom element goes to the top and all the rest shift down by 1
-rrr - rra and rrb at the same time
+The allowed operations are:\
+sa - Swaps the top 2 elements of stack A\
+sb - Swap the top 2 elements of stack B\
+ss - sa and sb at the same time\
+pa - Pushes the top element of stack B to the top of stack A\
+pb - Pushes the top element of stack A to the top of stack B\
+ra - Rotates stack A so that the top element goes to the bottom and all the rest shift up by 1\
+rb - Rotates stack B so that the top element goes to the bottom and all the rest shift up by 1\
+rr - ra and rb at the same time\
+rra - Rotates stack A so that the bottom element goes to the top and all the rest shift down by 1\
+rrb - Rotates stack B so that the bottom element goes to the top and all the rest shift down by 1\
+rrr - rra and rrb at the same time\
 
 
 Usage: 'make' to create the executables
